@@ -1,0 +1,695 @@
+2020-07-17 22:01:43,390 [INFO] Calling tohdf5 with params ['example_data/complex', 'bin', 'my_file.hdf5', [0, 1]]
+2020-07-17 22:01:43,392 [INFO] Processing 0 directories
+2020-07-17 22:05:34,360 [INFO] Calling tohdf5 with params ['example_data/complex', 'bin', 'my_file.hdf5', [0, 1]]
+2020-07-17 22:05:34,363 [INFO] Processing 3 directories
+2020-07-17 22:05:34,368 [WARNING] Traceback (most recent call last):
+  File "/Users/rafaelmosca/opt/anaconda3/lib/python3.7/site-packages/click_shell/core.py", line 37, in invoke_
+    parent=self.ctx)
+  File "/Users/rafaelmosca/opt/anaconda3/lib/python3.7/site-packages/click/core.py", line 782, in main
+    rv = self.invoke(ctx)
+  File "/Users/rafaelmosca/opt/anaconda3/lib/python3.7/site-packages/click/core.py", line 1066, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "/Users/rafaelmosca/opt/anaconda3/lib/python3.7/site-packages/click/core.py", line 610, in invoke
+    return callback(*args, **kwargs)
+  File "./__main__.py", line 64, in tohdf5
+    fl.create_hdf5_dataset(out, file, polarities)
+  File "./aertb/core/file_loader.py", line 95, in create_hdf5_dataset
+    self._add_all_files(fp, join(file_or_dir, folder), 'folder', polarities, to_secs)
+  File "./aertb/core/file_loader.py", line 104, in _add_all_files
+    all_files = [f for f in os.listdir(dir_path) if os.path.isfile(f)]
+FileNotFoundError: [Errno 2] No such file or directory: 'example_data/complex/example_data/complex'
+
+2020-07-17 22:07:09,671 [INFO] Calling tohdf5 with params ['example_data/complex', 'bin', 'my_file.hdf5', [0, 1]]
+2020-07-17 22:07:09,675 [INFO] Processing directories: [['one', 'untitled'], [], []] 
+2020-07-17 22:07:09,683 [WARNING] Traceback (most recent call last):
+  File "/Users/rafaelmosca/opt/anaconda3/lib/python3.7/site-packages/click_shell/core.py", line 37, in invoke_
+    parent=self.ctx)
+  File "/Users/rafaelmosca/opt/anaconda3/lib/python3.7/site-packages/click/core.py", line 782, in main
+    rv = self.invoke(ctx)
+  File "/Users/rafaelmosca/opt/anaconda3/lib/python3.7/site-packages/click/core.py", line 1066, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "/Users/rafaelmosca/opt/anaconda3/lib/python3.7/site-packages/click/core.py", line 610, in invoke
+    return callback(*args, **kwargs)
+  File "./__main__.py", line 64, in tohdf5
+    fl.create_hdf5_dataset(out, file, polarities)
+  File "./aertb/core/file_loader.py", line 96, in create_hdf5_dataset
+    self._add_all_files(fp, join(file_or_dir, folder), 'folder', polarities, to_secs)
+  File "/Users/rafaelmosca/opt/anaconda3/lib/python3.7/posixpath.py", line 94, in join
+    genericpath._check_arg_types('join', a, *p)
+  File "/Users/rafaelmosca/opt/anaconda3/lib/python3.7/genericpath.py", line 153, in _check_arg_types
+    (funcname, s.__class__.__name__)) from None
+TypeError: join() argument must be str or bytes, not 'list'
+
+2020-07-17 22:08:56,400 [INFO] Calling tohdf5 with params ['example_data/complex', 'bin', 'my_file.hdf5', [0, 1]]
+2020-07-17 22:08:56,402 [INFO] Processing directories: ['example_data/complex/one', 'example_data/complex/untitled'] 
+2020-07-17 22:08:56,407 [WARNING] Traceback (most recent call last):
+  File "/Users/rafaelmosca/opt/anaconda3/lib/python3.7/site-packages/click_shell/core.py", line 37, in invoke_
+    parent=self.ctx)
+  File "/Users/rafaelmosca/opt/anaconda3/lib/python3.7/site-packages/click/core.py", line 782, in main
+    rv = self.invoke(ctx)
+  File "/Users/rafaelmosca/opt/anaconda3/lib/python3.7/site-packages/click/core.py", line 1066, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "/Users/rafaelmosca/opt/anaconda3/lib/python3.7/site-packages/click/core.py", line 610, in invoke
+    return callback(*args, **kwargs)
+  File "./__main__.py", line 64, in tohdf5
+    fl.create_hdf5_dataset(out, file, polarities)
+  File "./aertb/core/file_loader.py", line 96, in create_hdf5_dataset
+    self._add_all_files(fp, join(file_or_dir, folder), 'folder', polarities, to_secs)
+  File "./aertb/core/file_loader.py", line 105, in _add_all_files
+    all_files = [f for f in os.listdir(dir_path) if os.path.isfile(f)]
+FileNotFoundError: [Errno 2] No such file or directory: 'example_data/complex/example_data/complex/one'
+
+2020-07-17 22:09:32,884 [INFO] Calling tohdf5 with params ['example_data/complex', 'bin', 'my_file.hdf5', [0, 1]]
+2020-07-17 22:09:32,892 [WARNING] Traceback (most recent call last):
+  File "/Users/rafaelmosca/opt/anaconda3/lib/python3.7/site-packages/click_shell/core.py", line 37, in invoke_
+    parent=self.ctx)
+  File "/Users/rafaelmosca/opt/anaconda3/lib/python3.7/site-packages/click/core.py", line 782, in main
+    rv = self.invoke(ctx)
+  File "/Users/rafaelmosca/opt/anaconda3/lib/python3.7/site-packages/click/core.py", line 1066, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "/Users/rafaelmosca/opt/anaconda3/lib/python3.7/site-packages/click/core.py", line 610, in invoke
+    return callback(*args, **kwargs)
+  File "./__main__.py", line 64, in tohdf5
+    fl.create_hdf5_dataset(out, file, polarities)
+  File "./aertb/core/file_loader.py", line 88, in create_hdf5_dataset
+    sub_dirs = [f.title() for f in os.scandir(file_or_dir) if f.is_dir()]
+  File "./aertb/core/file_loader.py", line 88, in <listcomp>
+    sub_dirs = [f.title() for f in os.scandir(file_or_dir) if f.is_dir()]
+AttributeError: 'posix.DirEntry' object has no attribute 'title'
+
+2020-07-17 22:10:29,293 [INFO] Calling tohdf5 with params ['example_data/complex', 'bin', 'my_file.hdf5', [0, 1]]
+2020-07-17 22:10:29,295 [INFO] Processing directories: ['one', 'untitled'] 
+2020-07-17 22:14:53,564 [INFO] Calling tohdf5 with params ['example_data/complex/03263.bin', 'bin', 'my_file.hdf5', [0, 1]]
+2020-07-17 22:19:15,403 [INFO] Calling tohdf5 with params ['example_data/complex/03263.bin', 'bin', 'my_file.hdf5', [0, 1]]
+2020-07-17 22:19:15,412 [WARNING] Traceback (most recent call last):
+  File "/Users/rafaelmosca/opt/anaconda3/lib/python3.7/site-packages/click_shell/core.py", line 37, in invoke_
+    parent=self.ctx)
+  File "/Users/rafaelmosca/opt/anaconda3/lib/python3.7/site-packages/click/core.py", line 782, in main
+    rv = self.invoke(ctx)
+  File "/Users/rafaelmosca/opt/anaconda3/lib/python3.7/site-packages/click/core.py", line 1066, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "/Users/rafaelmosca/opt/anaconda3/lib/python3.7/site-packages/click/core.py", line 610, in invoke
+    return callback(*args, **kwargs)
+  File "./__main__.py", line 64, in tohdf5
+    fl.create_hdf5_dataset(out, file, polarities)
+  File "./aertb/core/file_loader.py", line 73, in create_hdf5_dataset
+    with h5py.File(dataset_name, 'w') as fp:
+  File "/Users/rafaelmosca/opt/anaconda3/lib/python3.7/site-packages/h5py/_hl/files.py", line 408, in __init__
+    swmr=swmr)
+  File "/Users/rafaelmosca/opt/anaconda3/lib/python3.7/site-packages/h5py/_hl/files.py", line 179, in make_fid
+    fid = h5f.create(name, h5f.ACC_TRUNC, fapl=fapl, fcpl=fcpl)
+  File "h5py/_objects.pyx", line 54, in h5py._objects.with_phil.wrapper
+  File "h5py/_objects.pyx", line 55, in h5py._objects.with_phil.wrapper
+  File "h5py/h5f.pyx", line 108, in h5py.h5f.create
+OSError: Unable to create file (unable to lock file, errno = 35, error message = 'Resource temporarily unavailable')
+
+2020-07-17 22:19:23,104 [INFO] Calling tohdf5 with params ['example_data/complex/03263.bin', 'bin', 'my_file.hdf5', [0, 1]]
+2020-07-17 22:20:11,182 [INFO] Calling tohdf5 with params ['example_data/complex', 'bin', 'my_file.hdf5', [0, 1]]
+2020-07-17 22:20:11,185 [INFO] Processing .
+2020-07-17 22:20:11,186 [INFO] Processing directories: ['one', 'untitled'] 
+2020-07-17 22:20:11,186 [INFO] Processing example_data/complex/one
+2020-07-17 22:20:11,186 [INFO] Processing example_data/complex/untitled
+2020-07-17 22:22:19,686 [INFO] Calling tohdf5 with params ['example_data/complex', 'bin', 'my_file.hdf5', [0, 1]]
+2020-07-17 22:22:19,694 [WARNING] Traceback (most recent call last):
+  File "/Users/rafaelmosca/opt/anaconda3/lib/python3.7/site-packages/click_shell/core.py", line 37, in invoke_
+    parent=self.ctx)
+  File "/Users/rafaelmosca/opt/anaconda3/lib/python3.7/site-packages/click/core.py", line 782, in main
+    rv = self.invoke(ctx)
+  File "/Users/rafaelmosca/opt/anaconda3/lib/python3.7/site-packages/click/core.py", line 1066, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "/Users/rafaelmosca/opt/anaconda3/lib/python3.7/site-packages/click/core.py", line 610, in invoke
+    return callback(*args, **kwargs)
+  File "./__main__.py", line 64, in tohdf5
+    fl.create_hdf5_dataset(out, file, polarities)
+  File "./aertb/core/file_loader.py", line 73, in create_hdf5_dataset
+    with h5py.File(dataset_name, 'w') as fp:
+  File "/Users/rafaelmosca/opt/anaconda3/lib/python3.7/site-packages/h5py/_hl/files.py", line 408, in __init__
+    swmr=swmr)
+  File "/Users/rafaelmosca/opt/anaconda3/lib/python3.7/site-packages/h5py/_hl/files.py", line 179, in make_fid
+    fid = h5f.create(name, h5f.ACC_TRUNC, fapl=fapl, fcpl=fcpl)
+  File "h5py/_objects.pyx", line 54, in h5py._objects.with_phil.wrapper
+  File "h5py/_objects.pyx", line 55, in h5py._objects.with_phil.wrapper
+  File "h5py/h5f.pyx", line 108, in h5py.h5f.create
+OSError: Unable to create file (unable to lock file, errno = 35, error message = 'Resource temporarily unavailable')
+
+2020-07-17 22:22:29,574 [INFO] Calling tohdf5 with params ['example_data/complex', 'bin', 'my_file.hdf5', [0, 1]]
+2020-07-17 22:22:29,576 [INFO] Processing example_data/complex
+2020-07-17 22:22:29,578 [INFO] Processing directories: ['one', 'untitled'] 
+2020-07-17 22:22:29,578 [INFO] Processing example_data/complex/one
+2020-07-17 22:22:29,578 [INFO] Processing example_data/complex/untitled
+2020-07-17 22:24:27,368 [INFO] Calling tohdf5 with params ['example_data/complex', 'bin', 'my_file.hdf5', [0, 1]]
+2020-07-17 22:24:27,369 [INFO] Processing example_data/complex
+2020-07-17 22:24:27,371 [INFO] Files: ['.DS_Store']
+2020-07-17 22:24:27,371 [INFO] Processing directories: ['one', 'untitled'] 
+2020-07-17 22:24:27,371 [INFO] Processing example_data/complex/one
+2020-07-17 22:24:27,372 [INFO] Files: ['.DS_Store']
+2020-07-17 22:24:27,372 [INFO] Processing example_data/complex/untitled
+2020-07-17 22:24:27,372 [INFO] Files: []
+2020-07-17 22:25:54,358 [INFO] Calling tohdf5 with params ['example_data/complex', 'bin', 'my_file.hdf5', [0, 1]]
+2020-07-17 22:25:54,360 [INFO] Processing example_data/complex
+2020-07-17 22:25:54,360 [INFO] Files: ['03263.bin', '.DS_Store', 'obj_004416_td.dat', 'one', 'untitled']
+2020-07-17 22:25:54,360 [INFO] Found the following valid files ['03263.bin'] in example_data/complex
+2020-07-17 22:25:54,385 [INFO] Processing directories: ['one', 'untitled'] 
+2020-07-17 22:25:54,385 [INFO] Processing example_data/complex/one
+2020-07-17 22:25:54,385 [INFO] Files: ['03263.bin', '.DS_Store']
+2020-07-17 22:25:54,386 [INFO] Found the following valid files ['03263.bin'] in example_data/complex/one
+2020-07-17 22:25:54,395 [INFO] Processing example_data/complex/untitled
+2020-07-17 22:25:54,395 [INFO] Files: ['obj_004416_td.dat']
+2020-07-17 22:29:28,298 [INFO] Calling tohdf5 with params ['example_data/complex', 'bin', 'my_file.hdf5', [0, 1]]
+2020-07-17 22:29:28,305 [WARNING] Traceback (most recent call last):
+  File "/Users/rafaelmosca/opt/anaconda3/lib/python3.7/site-packages/click_shell/core.py", line 37, in invoke_
+    parent=self.ctx)
+  File "/Users/rafaelmosca/opt/anaconda3/lib/python3.7/site-packages/click/core.py", line 782, in main
+    rv = self.invoke(ctx)
+  File "/Users/rafaelmosca/opt/anaconda3/lib/python3.7/site-packages/click/core.py", line 1066, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "/Users/rafaelmosca/opt/anaconda3/lib/python3.7/site-packages/click/core.py", line 610, in invoke
+    return callback(*args, **kwargs)
+  File "./__main__.py", line 64, in tohdf5
+    fl.create_hdf5_dataset(out, file, polarities)
+  File "./aertb/core/file_loader.py", line 73, in create_hdf5_dataset
+    with h5py.File(dataset_name, 'w') as fp:
+  File "/Users/rafaelmosca/opt/anaconda3/lib/python3.7/site-packages/h5py/_hl/files.py", line 408, in __init__
+    swmr=swmr)
+  File "/Users/rafaelmosca/opt/anaconda3/lib/python3.7/site-packages/h5py/_hl/files.py", line 179, in make_fid
+    fid = h5f.create(name, h5f.ACC_TRUNC, fapl=fapl, fcpl=fcpl)
+  File "h5py/_objects.pyx", line 54, in h5py._objects.with_phil.wrapper
+  File "h5py/_objects.pyx", line 55, in h5py._objects.with_phil.wrapper
+  File "h5py/h5f.pyx", line 108, in h5py.h5f.create
+OSError: Unable to create file (unable to lock file, errno = 35, error message = 'Resource temporarily unavailable')
+
+2020-07-17 22:29:35,013 [INFO] Calling tohdf5 with params ['example_data/complex', 'bin', 'my_file.hdf5', [0, 1]]
+2020-07-17 22:29:35,015 [INFO] Processing example_data/complex
+2020-07-17 22:29:35,017 [INFO] Files: ['03263.bin']
+2020-07-17 22:29:35,017 [INFO] Found the following valid files ['03263.bin'] in example_data/complex
+2020-07-17 22:29:35,042 [WARNING] Traceback (most recent call last):
+  File "/Users/rafaelmosca/opt/anaconda3/lib/python3.7/site-packages/click_shell/core.py", line 37, in invoke_
+    parent=self.ctx)
+  File "/Users/rafaelmosca/opt/anaconda3/lib/python3.7/site-packages/click/core.py", line 782, in main
+    rv = self.invoke(ctx)
+  File "/Users/rafaelmosca/opt/anaconda3/lib/python3.7/site-packages/click/core.py", line 1066, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "/Users/rafaelmosca/opt/anaconda3/lib/python3.7/site-packages/click/core.py", line 610, in invoke
+    return callback(*args, **kwargs)
+  File "./__main__.py", line 64, in tohdf5
+    fl.create_hdf5_dataset(out, file, polarities)
+  File "./aertb/core/file_loader.py", line 85, in create_hdf5_dataset
+    self._add_all_files(fp, file_or_dir, 'root', polarities, to_secs)
+  File "./aertb/core/file_loader.py", line 118, in _add_all_files
+    events = self._loader.load_events(join(dir_path, [file, self.ext]), polarities, to_secs)
+  File "/Users/rafaelmosca/opt/anaconda3/lib/python3.7/posixpath.py", line 94, in join
+    genericpath._check_arg_types('join', a, *p)
+  File "/Users/rafaelmosca/opt/anaconda3/lib/python3.7/genericpath.py", line 153, in _check_arg_types
+    (funcname, s.__class__.__name__)) from None
+TypeError: join() argument must be str or bytes, not 'list'
+
+2020-07-17 22:31:25,828 [INFO] Calling tohdf5 with params ['example_data/complex', 'bin', 'my_file.hdf5', [0, 1]]
+2020-07-17 22:31:25,830 [INFO] Processing example_data/complex
+2020-07-17 22:31:25,830 [INFO] Files: ['03263.bin']
+2020-07-17 22:31:25,831 [INFO] Found the following valid files ['03263.bin'] in example_data/complex
+2020-07-17 22:31:25,856 [WARNING] Traceback (most recent call last):
+  File "/Users/rafaelmosca/opt/anaconda3/lib/python3.7/site-packages/click_shell/core.py", line 37, in invoke_
+    parent=self.ctx)
+  File "/Users/rafaelmosca/opt/anaconda3/lib/python3.7/site-packages/click/core.py", line 782, in main
+    rv = self.invoke(ctx)
+  File "/Users/rafaelmosca/opt/anaconda3/lib/python3.7/site-packages/click/core.py", line 1066, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "/Users/rafaelmosca/opt/anaconda3/lib/python3.7/site-packages/click/core.py", line 610, in invoke
+    return callback(*args, **kwargs)
+  File "./__main__.py", line 64, in tohdf5
+    fl.create_hdf5_dataset(out, file, polarities)
+  File "./aertb/core/file_loader.py", line 85, in create_hdf5_dataset
+    self._add_all_files(fp, file_or_dir, 'root', polarities, to_secs)
+  File "./aertb/core/file_loader.py", line 118, in _add_all_files
+    events = self._loader.load_events(join(dir_path, f'{file}.{self.ext}'), polarities, to_secs)
+  File "./aertb/core/loaders/bin_loader.py", line 55, in load_events
+    fp = open(filename, "rb")
+FileNotFoundError: [Errno 2] No such file or directory: 'example_data/complex/03263.bin.bin'
+
+2020-07-17 22:32:58,651 [INFO] Calling tohdf5 with params ['example_data/complex', 'bin', 'my_file.hdf5', [0, 1]]
+2020-07-17 22:32:58,653 [INFO] Processing example_data/complex
+2020-07-17 22:32:58,653 [INFO] Files: ['03263.bin']
+2020-07-17 22:32:58,653 [INFO] Found the following valid files ['03263.bin'] in example_data/complex
+2020-07-17 22:32:58,671 [INFO] Processing directories: ['one', 'untitled'] 
+2020-07-17 22:32:58,672 [INFO] Processing example_data/complex/one
+2020-07-17 22:32:58,672 [INFO] Files: ['03263.bin']
+2020-07-17 22:32:58,673 [INFO] Found the following valid files ['03263.bin'] in example_data/complex/one
+2020-07-17 22:32:58,685 [INFO] Processing example_data/complex/untitled
+2020-07-17 22:32:58,685 [INFO] Files: []
+2020-07-17 22:33:37,538 [INFO] Calling tohdf5 with params ['example_data/complex', 'dat', 'my_file2.hdf5', [0, 1]]
+2020-07-17 22:33:37,539 [INFO] Processing example_data/complex
+2020-07-17 22:33:37,541 [INFO] Files: ['obj_004416_td.dat']
+2020-07-17 22:33:37,541 [INFO] Found the following valid files ['obj_004416_td.dat'] in example_data/complex
+2020-07-17 22:33:37,543 [INFO] Processing 7102.0 events
+2020-07-17 22:33:37,552 [INFO] Processing directories: ['one', 'untitled'] 
+2020-07-17 22:33:37,552 [INFO] Processing example_data/complex/one
+2020-07-17 22:33:37,553 [INFO] Files: []
+2020-07-17 22:33:37,553 [INFO] Processing example_data/complex/untitled
+2020-07-17 22:33:37,553 [INFO] Files: ['obj_004416_td.dat']
+2020-07-17 22:33:37,553 [INFO] Found the following valid files ['obj_004416_td.dat'] in example_data/complex/untitled
+2020-07-17 22:33:37,554 [INFO] Processing 7102.0 events
+2020-07-17 22:37:37,180 [INFO] Calling tohdf5 with params ['example_data/complex', 'dat', 'my_file2.hdf5', [0, 1]]
+2020-07-17 22:37:37,183 [INFO] Processing example_data/complex
+2020-07-17 22:37:37,189 [WARNING] Traceback (most recent call last):
+  File "/Users/rafaelmosca/opt/anaconda3/lib/python3.7/site-packages/click_shell/core.py", line 37, in invoke_
+    parent=self.ctx)
+  File "/Users/rafaelmosca/opt/anaconda3/lib/python3.7/site-packages/click/core.py", line 782, in main
+    rv = self.invoke(ctx)
+  File "/Users/rafaelmosca/opt/anaconda3/lib/python3.7/site-packages/click/core.py", line 1066, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "/Users/rafaelmosca/opt/anaconda3/lib/python3.7/site-packages/click/core.py", line 610, in invoke
+    return callback(*args, **kwargs)
+  File "./__main__.py", line 64, in tohdf5
+    fl.create_hdf5_dataset(out, file, polarities)
+  File "./aertb/core/file_loader.py", line 85, in create_hdf5_dataset
+    self._add_all_files(fp, file_or_dir, 'root', polarities, to_secs)
+  File "./aertb/core/file_loader.py", line 106, in _add_all_files
+    all_files = [f for f in os.scandir(dir_path)]
+FileNotFoundError: [Errno 2] No such file or directory: 'example_data/complex'
+
+2020-07-17 22:37:49,452 [INFO] Calling tohdf5 with params ['example_data/mixed', 'dat', 'my_file2.hdf5', [0, 1]]
+2020-07-17 22:37:49,453 [INFO] Processing example_data/mixed
+2020-07-17 22:37:49,454 [INFO] Files: ['obj_004416_td.dat']
+2020-07-17 22:37:49,454 [INFO] Found the following valid files ['obj_004416_td.dat'] in example_data/mixed
+2020-07-17 22:37:49,471 [INFO] Processing 7102.0 events
+2020-07-17 22:37:49,482 [INFO] Processing directories: ['one', 'untitled'] 
+2020-07-17 22:37:49,482 [INFO] Processing example_data/mixed/one
+2020-07-17 22:37:49,483 [INFO] Files: []
+2020-07-17 22:37:49,483 [INFO] Processing example_data/mixed/untitled
+2020-07-17 22:37:49,484 [INFO] Files: ['obj_004416_td.dat']
+2020-07-17 22:37:49,484 [INFO] Found the following valid files ['obj_004416_td.dat'] in example_data/mixed/untitled
+2020-07-17 22:37:49,485 [INFO] Processing 7102.0 events
+2020-07-18 17:34:10,302 [INFO] Calling tohdf5 with params ['example_data/aedat', 'dat', 'my_file2.hdf5', [0, 1]]
+2020-07-18 17:34:10,326 [INFO] Processing example_data/aedat
+2020-07-18 17:34:10,326 [INFO] Files: ['cards_1.aedat']
+2020-07-18 17:34:10,328 [INFO] Found the following valid files ['cards_1.aedat'] in example_data/aedat
+2020-07-18 17:34:10,337 [INFO] Processing 598890.25 events
+2020-07-18 17:34:10,618 [INFO] Processing directories: [] 
+2020-07-18 19:35:04,935 [INFO] Calling tohdf5 with params ['example_data/aedat', 'dat', 'my_file2.hdf5', [0, 1]]
+2020-07-18 19:35:04,943 [WARNING] Traceback (most recent call last):
+  File "/Users/rafaelmosca/opt/anaconda3/lib/python3.7/site-packages/click_shell/core.py", line 37, in invoke_
+    parent=self.ctx)
+  File "/Users/rafaelmosca/opt/anaconda3/lib/python3.7/site-packages/click/core.py", line 782, in main
+    rv = self.invoke(ctx)
+  File "/Users/rafaelmosca/opt/anaconda3/lib/python3.7/site-packages/click/core.py", line 1066, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "/Users/rafaelmosca/opt/anaconda3/lib/python3.7/site-packages/click/core.py", line 610, in invoke
+    return callback(*args, **kwargs)
+  File "./__main__.py", line 64, in tohdf5
+    fl.create_hdf5_dataset(out, file, polarities)
+  File "./aertb/core/file_loader.py", line 75, in create_hdf5_dataset
+    with h5py.File(dataset_name, 'w') as fp:
+  File "/Users/rafaelmosca/opt/anaconda3/lib/python3.7/site-packages/h5py/_hl/files.py", line 408, in __init__
+    swmr=swmr)
+  File "/Users/rafaelmosca/opt/anaconda3/lib/python3.7/site-packages/h5py/_hl/files.py", line 179, in make_fid
+    fid = h5f.create(name, h5f.ACC_TRUNC, fapl=fapl, fcpl=fcpl)
+  File "h5py/_objects.pyx", line 54, in h5py._objects.with_phil.wrapper
+  File "h5py/_objects.pyx", line 55, in h5py._objects.with_phil.wrapper
+  File "h5py/h5f.pyx", line 108, in h5py.h5f.create
+OSError: Unable to create file (unable to lock file, errno = 35, error message = 'Resource temporarily unavailable')
+
+2020-07-18 19:35:13,797 [INFO] Calling tohdf5 with params ['example_data/aedat', 'dat', 'my_file2.hdf5', [0, 1]]
+2020-07-18 19:35:13,800 [INFO] Processing example_data/aedat
+2020-07-18 19:35:13,800 [INFO] Files: []
+2020-07-18 19:35:13,801 [INFO] Processing directories: [] 
+2020-07-18 19:35:43,052 [INFO] Calling tohdf5 with params ['example_data/aedat', 'aedat', 'my_file2.hdf5', [0, 1]]
+2020-07-18 19:35:43,054 [INFO] Processing example_data/aedat
+2020-07-18 19:35:43,055 [INFO] Files: ['cards_1.aedat']
+2020-07-18 19:35:43,055 [INFO] Found the following valid files ['cards_1.aedat'] in example_data/aedat
+2020-07-18 19:35:43,067 [INFO] Processing 598882.0 events
+2020-07-18 19:35:43,088 [WARNING] Traceback (most recent call last):
+  File "/Users/rafaelmosca/opt/anaconda3/lib/python3.7/site-packages/click_shell/core.py", line 37, in invoke_
+    parent=self.ctx)
+  File "/Users/rafaelmosca/opt/anaconda3/lib/python3.7/site-packages/click/core.py", line 782, in main
+    rv = self.invoke(ctx)
+  File "/Users/rafaelmosca/opt/anaconda3/lib/python3.7/site-packages/click/core.py", line 1066, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "/Users/rafaelmosca/opt/anaconda3/lib/python3.7/site-packages/click/core.py", line 610, in invoke
+    return callback(*args, **kwargs)
+  File "./__main__.py", line 64, in tohdf5
+    fl.create_hdf5_dataset(out, file, polarities)
+  File "./aertb/core/file_loader.py", line 87, in create_hdf5_dataset
+    self._add_all_files(fp, file_or_dir, 'root', polarities, to_secs)
+  File "./aertb/core/file_loader.py", line 120, in _add_all_files
+    events = self._loader.load_events(join(dir_path, file), polarities, to_secs)
+  File "./aertb/core/loaders/aedat_loader.py", line 72, in load_events
+    ts1 = np.left_shift(jaer_events['ts4'].astype(np.uint16), 0)
+ValueError: no field of name ts4
+
+2020-07-18 19:36:45,665 [INFO] Calling tohdf5 with params ['example_data/aedat', 'aedat', 'my_file2.hdf5', [0, 1]]
+2020-07-18 19:36:45,666 [INFO] Processing example_data/aedat
+2020-07-18 19:36:45,667 [INFO] Files: ['cards_1.aedat']
+2020-07-18 19:36:45,667 [INFO] Found the following valid files ['cards_1.aedat'] in example_data/aedat
+2020-07-18 19:36:45,679 [INFO] Processing 598882.0 events
+2020-07-18 19:36:45,727 [WARNING] Traceback (most recent call last):
+  File "/Users/rafaelmosca/opt/anaconda3/lib/python3.7/site-packages/click_shell/core.py", line 37, in invoke_
+    parent=self.ctx)
+  File "/Users/rafaelmosca/opt/anaconda3/lib/python3.7/site-packages/click/core.py", line 782, in main
+    rv = self.invoke(ctx)
+  File "/Users/rafaelmosca/opt/anaconda3/lib/python3.7/site-packages/click/core.py", line 1066, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "/Users/rafaelmosca/opt/anaconda3/lib/python3.7/site-packages/click/core.py", line 610, in invoke
+    return callback(*args, **kwargs)
+  File "./__main__.py", line 64, in tohdf5
+    fl.create_hdf5_dataset(out, file, polarities)
+  File "./aertb/core/file_loader.py", line 87, in create_hdf5_dataset
+    self._add_all_files(fp, file_or_dir, 'root', polarities, to_secs)
+  File "./aertb/core/file_loader.py", line 120, in _add_all_files
+    events = self._loader.load_events(join(dir_path, file), polarities, to_secs)
+  File "./aertb/core/loaders/aedat_loader.py", line 86, in load_events
+    recarray = np.rec.fromarrays([x,y,ts,p], dtype=event_dtype)
+  File "/Users/rafaelmosca/opt/anaconda3/lib/python3.7/site-packages/numpy/core/records.py", line 638, in fromarrays
+    raise ValueError("array-shape mismatch in array %d" % k)
+ValueError: array-shape mismatch in array 3
+
+2020-07-18 19:38:01,840 [INFO] Calling tohdf5 with params ['example_data/aedat', 'aedat', 'my_file2.hdf5', [0, 1]]
+2020-07-18 19:38:01,842 [INFO] Processing example_data/aedat
+2020-07-18 19:38:01,842 [INFO] Files: ['cards_1.aedat']
+2020-07-18 19:38:01,843 [INFO] Found the following valid files ['cards_1.aedat'] in example_data/aedat
+2020-07-18 19:38:01,855 [INFO] Processing 598882.0 events
+2020-07-18 19:38:02,098 [INFO] Processing directories: [] 
+2020-07-18 19:45:00,538 [INFO] Calling tohdf5 with params ['example_data/aedat', 'aedat', 'my_file2.hdf5', [0, 1]]
+2020-07-18 19:45:00,547 [WARNING] Traceback (most recent call last):
+  File "/Users/rafaelmosca/opt/anaconda3/lib/python3.7/site-packages/click_shell/core.py", line 37, in invoke_
+    parent=self.ctx)
+  File "/Users/rafaelmosca/opt/anaconda3/lib/python3.7/site-packages/click/core.py", line 782, in main
+    rv = self.invoke(ctx)
+  File "/Users/rafaelmosca/opt/anaconda3/lib/python3.7/site-packages/click/core.py", line 1066, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "/Users/rafaelmosca/opt/anaconda3/lib/python3.7/site-packages/click/core.py", line 610, in invoke
+    return callback(*args, **kwargs)
+  File "./__main__.py", line 64, in tohdf5
+    fl.create_hdf5_dataset(out, file, polarities)
+  File "./aertb/core/file_loader.py", line 75, in create_hdf5_dataset
+    with h5py.File(dataset_name, 'w') as fp:
+  File "/Users/rafaelmosca/opt/anaconda3/lib/python3.7/site-packages/h5py/_hl/files.py", line 408, in __init__
+    swmr=swmr)
+  File "/Users/rafaelmosca/opt/anaconda3/lib/python3.7/site-packages/h5py/_hl/files.py", line 179, in make_fid
+    fid = h5f.create(name, h5f.ACC_TRUNC, fapl=fapl, fcpl=fcpl)
+  File "h5py/_objects.pyx", line 54, in h5py._objects.with_phil.wrapper
+  File "h5py/_objects.pyx", line 55, in h5py._objects.with_phil.wrapper
+  File "h5py/h5f.pyx", line 108, in h5py.h5f.create
+OSError: Unable to create file (unable to lock file, errno = 35, error message = 'Resource temporarily unavailable')
+
+2020-07-18 19:45:06,815 [INFO] Calling tohdf5 with params ['example_data/aedat', 'aedat', 'my_file2.hdf5', [0, 1]]
+2020-07-18 19:45:06,817 [INFO] Processing example_data/aedat
+2020-07-18 19:45:06,817 [INFO] Files: ['cards_1.aedat']
+2020-07-18 19:45:06,818 [INFO] Found the following valid files ['cards_1.aedat'] in example_data/aedat
+2020-07-18 19:45:06,829 [INFO] Processing 598882.0 events
+2020-07-18 19:45:07,087 [INFO] Processing directories: [] 
+2020-07-18 19:48:56,427 [INFO] Calling tohdf5 with params ['example_data/aedat', 'aedat', 'my_file2.hdf5', [0, 1]]
+2020-07-18 19:48:56,439 [WARNING] Traceback (most recent call last):
+  File "/Users/rafaelmosca/opt/anaconda3/lib/python3.7/site-packages/click_shell/core.py", line 37, in invoke_
+    parent=self.ctx)
+  File "/Users/rafaelmosca/opt/anaconda3/lib/python3.7/site-packages/click/core.py", line 782, in main
+    rv = self.invoke(ctx)
+  File "/Users/rafaelmosca/opt/anaconda3/lib/python3.7/site-packages/click/core.py", line 1066, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "/Users/rafaelmosca/opt/anaconda3/lib/python3.7/site-packages/click/core.py", line 610, in invoke
+    return callback(*args, **kwargs)
+  File "./__main__.py", line 64, in tohdf5
+    fl.create_hdf5_dataset(out, file, polarities)
+  File "./aertb/core/file_loader.py", line 75, in create_hdf5_dataset
+    with h5py.File(dataset_name, 'w') as fp:
+  File "/Users/rafaelmosca/opt/anaconda3/lib/python3.7/site-packages/h5py/_hl/files.py", line 408, in __init__
+    swmr=swmr)
+  File "/Users/rafaelmosca/opt/anaconda3/lib/python3.7/site-packages/h5py/_hl/files.py", line 179, in make_fid
+    fid = h5f.create(name, h5f.ACC_TRUNC, fapl=fapl, fcpl=fcpl)
+  File "h5py/_objects.pyx", line 54, in h5py._objects.with_phil.wrapper
+  File "h5py/_objects.pyx", line 55, in h5py._objects.with_phil.wrapper
+  File "h5py/h5f.pyx", line 108, in h5py.h5f.create
+OSError: Unable to create file (unable to lock file, errno = 35, error message = 'Resource temporarily unavailable')
+
+2020-07-18 19:49:01,600 [INFO] Calling tohdf5 with params ['example_data/aedat', 'aedat', 'my_file2.hdf5', [0, 1]]
+2020-07-18 19:49:01,602 [INFO] Processing example_data/aedat
+2020-07-18 19:49:01,602 [INFO] Files: ['cards_1.aedat']
+2020-07-18 19:49:01,602 [INFO] Found the following valid files ['cards_1.aedat'] in example_data/aedat
+2020-07-18 19:49:01,616 [INFO] Processing 598882.0 events
+2020-07-18 19:49:02,317 [INFO] Processing directories: [] 
+2020-07-18 20:41:52,013 [INFO] Calling makegif with params ['example_data/complex/03263.bin', 'bin', 'my_file.gif', ['b', 'o', 't', 'h'], 'decay']
+2020-07-18 20:41:52,019 [WARNING] Traceback (most recent call last):
+  File "/Users/rafaelmosca/opt/anaconda3/lib/python3.7/site-packages/click_shell/core.py", line 37, in invoke_
+    parent=self.ctx)
+  File "/Users/rafaelmosca/opt/anaconda3/lib/python3.7/site-packages/click/core.py", line 782, in main
+    rv = self.invoke(ctx)
+  File "/Users/rafaelmosca/opt/anaconda3/lib/python3.7/site-packages/click/core.py", line 1066, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "/Users/rafaelmosca/opt/anaconda3/lib/python3.7/site-packages/click/core.py", line 610, in invoke
+    return callback(*args, **kwargs)
+  File "./__main__.py", line 86, in makegif
+    events = fl.load_events(file, [0, 1], to_secs=True)
+  File "./aertb/core/file_loader.py", line 51, in load_events
+    return self._loader.load_events(filename, polarities, to_secs)
+  File "./aertb/core/loaders/bin_loader.py", line 55, in load_events
+    fp = open(filename, "rb")
+FileNotFoundError: [Errno 2] No such file or directory: 'example_data/complex/03263.bin'
+
+2020-07-18 20:42:03,845 [INFO] Calling makegif with params ['example_data/bin/03263.bin', 'bin', 'my_file.gif', ['b', 'o', 't', 'h'], 'decay']
+2020-07-18 20:42:03,847 [WARNING] Traceback (most recent call last):
+  File "/Users/rafaelmosca/opt/anaconda3/lib/python3.7/site-packages/click_shell/core.py", line 37, in invoke_
+    parent=self.ctx)
+  File "/Users/rafaelmosca/opt/anaconda3/lib/python3.7/site-packages/click/core.py", line 782, in main
+    rv = self.invoke(ctx)
+  File "/Users/rafaelmosca/opt/anaconda3/lib/python3.7/site-packages/click/core.py", line 1066, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "/Users/rafaelmosca/opt/anaconda3/lib/python3.7/site-packages/click/core.py", line 610, in invoke
+    return callback(*args, **kwargs)
+  File "./__main__.py", line 86, in makegif
+    events = fl.load_events(file, [0, 1], to_secs=True)
+  File "./aertb/core/file_loader.py", line 51, in load_events
+    return self._loader.load_events(filename, polarities, to_secs)
+  File "./aertb/core/loaders/bin_loader.py", line 55, in load_events
+    fp = open(filename, "rb")
+FileNotFoundError: [Errno 2] No such file or directory: 'example_data/bin/03263.bin'
+
+2020-07-18 20:42:42,042 [INFO] Calling makegif with params ['example_data/bin/one/03263.bin', 'bin', 'test1.gif', ['b', 'o', 't', 'h'], 'std']
+2020-07-18 20:42:42,047 [WARNING] Traceback (most recent call last):
+  File "/Users/rafaelmosca/opt/anaconda3/lib/python3.7/site-packages/click_shell/core.py", line 37, in invoke_
+    parent=self.ctx)
+  File "/Users/rafaelmosca/opt/anaconda3/lib/python3.7/site-packages/click/core.py", line 782, in main
+    rv = self.invoke(ctx)
+  File "/Users/rafaelmosca/opt/anaconda3/lib/python3.7/site-packages/click/core.py", line 1066, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "/Users/rafaelmosca/opt/anaconda3/lib/python3.7/site-packages/click/core.py", line 610, in invoke
+    return callback(*args, **kwargs)
+  File "./__main__.py", line 93, in makegif
+    viz_events = np.array([ev for ev in events if ev['p'] in polarity_map[polarities]])
+  File "./__main__.py", line 93, in <listcomp>
+    viz_events = np.array([ev for ev in events if ev['p'] in polarity_map[polarities]])
+TypeError: unhashable type: 'list'
+
+2020-07-18 20:43:25,408 [INFO] Calling makegif with params ['example_data/bin/one/03263.bin', 'bin', 'test1.gif', ['b', 'o', 't', 'h'], 'std']
+2020-07-18 20:43:25,415 [WARNING] Traceback (most recent call last):
+  File "/Users/rafaelmosca/opt/anaconda3/lib/python3.7/site-packages/click_shell/core.py", line 37, in invoke_
+    parent=self.ctx)
+  File "/Users/rafaelmosca/opt/anaconda3/lib/python3.7/site-packages/click/core.py", line 782, in main
+    rv = self.invoke(ctx)
+  File "/Users/rafaelmosca/opt/anaconda3/lib/python3.7/site-packages/click/core.py", line 1066, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "/Users/rafaelmosca/opt/anaconda3/lib/python3.7/site-packages/click/core.py", line 610, in invoke
+    return callback(*args, **kwargs)
+  File "./__main__.py", line 93, in makegif
+    viz_events = np.array([ev for ev in events if ev['p'] in polarity_map[polarities]])
+  File "./__main__.py", line 93, in <listcomp>
+    viz_events = np.array([ev for ev in events if ev['p'] in polarity_map[polarities]])
+TypeError: unhashable type: 'list'
+
+2020-07-18 20:44:02,300 [INFO] Calling makegif with params ['example_data/bin/one/03263.bin', 'bin', 'test1.gif', 'both', 'std']
+2020-07-18 20:44:02,346 [WARNING] Traceback (most recent call last):
+  File "/Users/rafaelmosca/opt/anaconda3/lib/python3.7/site-packages/click_shell/core.py", line 37, in invoke_
+    parent=self.ctx)
+  File "/Users/rafaelmosca/opt/anaconda3/lib/python3.7/site-packages/click/core.py", line 782, in main
+    rv = self.invoke(ctx)
+  File "/Users/rafaelmosca/opt/anaconda3/lib/python3.7/site-packages/click/core.py", line 1066, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "/Users/rafaelmosca/opt/anaconda3/lib/python3.7/site-packages/click/core.py", line 610, in invoke
+    return callback(*args, **kwargs)
+  File "./__main__.py", line 94, in makegif
+    make_gif(viz_events, out, polarities, camera_size=(y_max, x_max))
+  File "./aertb/core/viz.py", line 79, in make_gif
+    delta = duration / n_frames
+TypeError: ufunc 'true_divide' not supported for the input types, and the inputs could not be safely coerced to any supported types according to the casting rule ''safe''
+
+2020-07-18 20:46:59,761 [INFO] Calling makegif with params ['example_data/bin/one/03263.bin', 'bin', 'test1.gif', 'both', 'std']
+2020-07-18 20:46:59,806 [INFO] Duration 0.302938, Delta 0.03786725178360939 Tau 0.025
+2020-07-18 20:48:22,118 [INFO] Calling makegif with params ['example_data/bin/one/03263.bin', 'bin', 'test1std.gif', 'both', 'std']
+2020-07-18 20:48:22,155 [INFO] Duration 0.302938, Delta 0.03786725178360939 Tau 0.025
+2020-07-18 20:48:47,538 [INFO] Calling makegif with params ['example_data/bin/one/03263.bin', 'bin', 'test1std.gif', 'both', 'decay']
+2020-07-18 20:48:47,579 [INFO] Duration 0.302938, Delta 0.03786725178360939 Tau 0.025
+2020-07-18 20:49:02,872 [INFO] Calling makegif with params ['example_data/bin/one/03263.bin', 'bin', 'test1decay.gif', 'both', 'decay']
+2020-07-18 20:49:02,921 [INFO] Duration 0.302938, Delta 0.03786725178360939 Tau 0.025
+2020-07-18 20:49:13,241 [INFO] Calling makegif with params ['example_data/bin/one/03263.bin', 'bin', 'std.gif', 'both', 'std']
+2020-07-18 20:49:13,291 [INFO] Duration 0.302938, Delta 0.03786725178360939 Tau 0.025
+2020-07-18 20:50:44,112 [INFO] Calling makegif with params ['example_data/aedat/cards_1.aedat', 'aedat', 'std.gif', 'both', 'std']
+2020-07-18 20:50:44,114 [INFO] Processing 598882.0 events
+2020-07-18 20:50:47,284 [INFO] Duration 2.207847, Delta 0.2759808897972107 Tau 0.025
+2020-07-18 20:53:21,275 [INFO] Calling makegif with params ['example_data/aedat/cards_1.aedat', 'aedat', 'std.gif', 'both', 'std']
+2020-07-18 20:53:21,277 [INFO] Processing 598882.0 events
+2020-07-18 20:53:24,414 [INFO] Duration 2.207847, Delta 0.18398725986480713 Tau 0.025
+2020-07-18 20:54:23,135 [INFO] Calling makegif with params ['example_data/aedat/cards_1.aedat', 'aedat', 'std.gif', 'both', 'std']
+2020-07-18 20:54:23,140 [INFO] Processing 598882.0 events
+2020-07-18 20:54:26,361 [INFO] Duration 2.207847, Delta 0.09199362993240356 Tau 0.025
+2020-07-18 21:03:16,579 [WARNING] Traceback (most recent call last):
+  File "/Users/rafaelmosca/opt/anaconda3/lib/python3.7/site-packages/click_shell/core.py", line 37, in invoke_
+    parent=self.ctx)
+  File "/Users/rafaelmosca/opt/anaconda3/lib/python3.7/site-packages/click/core.py", line 782, in main
+    rv = self.invoke(ctx)
+  File "/Users/rafaelmosca/opt/anaconda3/lib/python3.7/site-packages/click/core.py", line 1066, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "/Users/rafaelmosca/opt/anaconda3/lib/python3.7/site-packages/click/core.py", line 610, in invoke
+    return callback(*args, **kwargs)
+TypeError: tohdf5() missing 1 required positional argument: 'ext'
+
+2020-07-18 21:03:45,349 [WARNING] Traceback (most recent call last):
+  File "/Users/rafaelmosca/opt/anaconda3/lib/python3.7/site-packages/click_shell/core.py", line 37, in invoke_
+    parent=self.ctx)
+  File "/Users/rafaelmosca/opt/anaconda3/lib/python3.7/site-packages/click/core.py", line 782, in main
+    rv = self.invoke(ctx)
+  File "/Users/rafaelmosca/opt/anaconda3/lib/python3.7/site-packages/click/core.py", line 1066, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "/Users/rafaelmosca/opt/anaconda3/lib/python3.7/site-packages/click/core.py", line 610, in invoke
+    return callback(*args, **kwargs)
+  File "./__main__.py", line 61, in tohdf5
+    logging.info(f'Calling tohdf5 with params {[file, ext, out, polarities]}')
+NameError: name 'ext' is not defined
+
+2020-07-18 21:04:44,745 [INFO] Calling tohdf5 with params : ['example_data/aedat/cards_1.aedat', '.aedat', 'mytest.h5', [0, 1]]
+2020-07-18 21:04:44,754 [WARNING] Traceback (most recent call last):
+  File "/Users/rafaelmosca/opt/anaconda3/lib/python3.7/site-packages/click_shell/core.py", line 37, in invoke_
+    parent=self.ctx)
+  File "/Users/rafaelmosca/opt/anaconda3/lib/python3.7/site-packages/click/core.py", line 782, in main
+    rv = self.invoke(ctx)
+  File "/Users/rafaelmosca/opt/anaconda3/lib/python3.7/site-packages/click/core.py", line 1066, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "/Users/rafaelmosca/opt/anaconda3/lib/python3.7/site-packages/click/core.py", line 610, in invoke
+    return callback(*args, **kwargs)
+  File "./__main__.py", line 67, in tohdf5
+    fl.create_hdf5_dataset(out, file, polarities)
+  File "./aertb/core/file_loader.py", line 78, in create_hdf5_dataset
+    if isfile(file_or_dir) and splitext(file_or_dir)[1] in extensions[self.ext]:
+KeyError: '.aedat'
+
+2020-07-18 21:06:25,600 [INFO] Calling tohdf5 with params : ['example_data/aedat/cards_1.aedat', '.aedat', 'mytest.h5', [0, 1]]
+2020-07-18 21:06:25,603 [INFO] Processing 598882.0 events
+2020-07-18 21:12:07,245 [INFO] Calling tohdf5 with params ['example_data/aedat/cards_1.aedat', None, 'mytest.h5', [0, 1]]
+2020-07-18 21:12:07,249 [INFO] Processing 598882.0 events
+2020-07-18 21:12:22,201 [INFO] Calling tohdf5 with params ['example_data/dat', None, 'mytest.h5', [0, 1]]
+2020-07-18 21:12:35,873 [INFO] Calling tohdf5 with params ['example_data/dat', 'dat', 'mytest.h5', [0, 1]]
+2020-07-18 21:12:35,875 [INFO] Processing example_data/dat
+2020-07-18 21:12:35,877 [INFO] Files: []
+2020-07-18 21:12:35,877 [INFO] Processing directories: ['background', 'cars'] 
+2020-07-18 21:12:35,878 [INFO] Processing example_data/dat/background
+2020-07-18 21:12:35,878 [INFO] Files: ['obj_004212_td.dat', 'obj_004213_td.dat', 'obj_004211_td.dat']
+2020-07-18 21:12:35,878 [INFO] Found the following valid files ['obj_004212_td.dat', 'obj_004213_td.dat', 'obj_004211_td.dat'] in example_data/dat/background
+2020-07-18 21:12:35,891 [INFO] Processing 540.0 events
+2020-07-18 21:12:35,894 [INFO] Processing 920.0 events
+2020-07-18 21:12:35,897 [INFO] Processing 1374.0 events
+2020-07-18 21:12:35,900 [INFO] Processing example_data/dat/cars
+2020-07-18 21:12:35,901 [INFO] Files: ['obj_004416_td.dat', 'obj_004414_td.dat', 'obj_004415_td.dat']
+2020-07-18 21:12:35,901 [INFO] Found the following valid files ['obj_004416_td.dat', 'obj_004414_td.dat', 'obj_004415_td.dat'] in example_data/dat/cars
+2020-07-18 21:12:35,903 [INFO] Processing 7102.0 events
+2020-07-18 21:12:35,909 [INFO] Processing 1756.0 events
+2020-07-18 21:12:35,912 [INFO] Processing 4977.0 events
+2020-07-18 21:14:21,769 [INFO] Calling makegif with params ['example_data/dat', None, 'mytest.gif', 'both', 'decay']
+2020-07-18 21:20:15,822 [INFO] Calling makegif with params ['example_data/dat', None, 'mytest.gif', 'both', 'decay']
+2020-07-18 21:24:36,997 [INFO] Calling makegif with params ['example_data/dat/cars/obj_004414_td.dat', None, 'mytest.gif', 'both', 'decay']
+2020-07-18 21:24:37,000 [INFO] Processing 1756.0 events
+2020-07-18 21:24:37,012 [INFO] Duration 0.099935, Delta 0.01249187532812357 Tau 0.025
+2020-07-18 21:25:38,275 [INFO] Calling makegif with params ['example_data/dat/cars/obj_004415_td.dat', None, 'mytest2.gif', 'both', 'decay']
+2020-07-18 21:25:38,277 [INFO] Processing 4977.0 events
+2020-07-18 21:25:38,307 [INFO] Duration 0.099904, Delta 0.012488000094890594 Tau 0.025
+2020-07-18 21:25:47,408 [INFO] Calling makegif with params ['example_data/dat/cars/obj_004416_td.dat', None, 'mytest3.gif', 'both', 'decay']
+2020-07-18 21:25:47,410 [INFO] Processing 7102.0 events
+2020-07-18 21:25:47,452 [INFO] Duration 0.099966, Delta 0.01249574963003397 Tau 0.025
+2020-07-18 21:28:46,449 [INFO] Calling makegif with params ['example_data/aedat/cards_1.aedat', 'aedat', 'std.gif', 'both', 'std']
+2020-07-18 21:28:46,452 [INFO] Processing 598882.0 events
+2020-07-18 21:28:49,631 [INFO] Duration 2.207847, Delta 0.18398725986480713 Tau 0.025
+2020-07-18 21:29:41,533 [INFO] Calling makegif with params ['example_data/dat/cars/obj_004416_td.dat', None, 'std.gif', 'both', 'std']
+2020-07-18 21:29:41,535 [INFO] Processing 7102.0 events
+2020-07-18 21:29:41,576 [INFO] Duration 0.099966, Delta 0.00833049975335598 Tau 0.025
+2020-07-18 21:30:18,318 [INFO] Calling makegif with params ['example_data/dat/cars/obj_004416_td.dat', None, 'std.gif', 'both', 'std']
+2020-07-18 21:30:18,319 [INFO] Processing 7102.0 events
+2020-07-18 21:30:18,359 [INFO] Duration 0.099966, Delta 0.00833049975335598 Tau 0.025
+2020-07-18 21:30:42,722 [INFO] Calling makegif with params ['example_data/dat/cars/obj_004415_td.dat', None, 'std.gif', 'both', 'std']
+2020-07-18 21:30:42,724 [INFO] Processing 4977.0 events
+2020-07-18 21:30:42,760 [INFO] Duration 0.099904, Delta 0.008325333396593729 Tau 0.025
+2020-07-18 21:30:53,117 [INFO] Calling makegif with params ['example_data/dat/cars/obj_004414_td.dat', None, 'std.gif', 'both', 'std']
+2020-07-18 21:30:53,119 [INFO] Processing 1756.0 events
+2020-07-18 21:30:53,132 [INFO] Duration 0.099935, Delta 0.008327916885415712 Tau 0.025
+2020-07-18 21:31:19,747 [INFO] Calling makegif with params ['example_data/dat/cars/obj_004414_td.dat', None, 'std.gif', 'both', 'decay']
+2020-07-18 21:31:19,748 [INFO] Processing 1756.0 events
+2020-07-18 21:31:19,765 [INFO] Duration 0.099935, Delta 0.008327916885415712 Tau 0.025
+2020-07-18 21:37:53,560 [INFO] Calling makegif with params ['example_data/dat/cars/obj_004414_td.dat', None, 'std.gif', 'both', 'decay']
+2020-07-18 21:37:53,563 [INFO] Processing 1756.0 events
+2020-07-18 21:37:53,579 [INFO] Duration 0.099935, Delta 0.008327916885415712 Tau 0.002081979221353928
+2020-07-18 21:37:53,585 [WARNING] Traceback (most recent call last):
+  File "/Users/rafaelmosca/opt/anaconda3/lib/python3.7/site-packages/click_shell/core.py", line 37, in invoke_
+    parent=self.ctx)
+  File "/Users/rafaelmosca/opt/anaconda3/lib/python3.7/site-packages/click/core.py", line 782, in main
+    rv = self.invoke(ctx)
+  File "/Users/rafaelmosca/opt/anaconda3/lib/python3.7/site-packages/click/core.py", line 1066, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "/Users/rafaelmosca/opt/anaconda3/lib/python3.7/site-packages/click/core.py", line 610, in invoke
+    return callback(*args, **kwargs)
+  File "./__main__.py", line 118, in makegif
+    make_gif(viz_events, out, camera_size=(y_max, x_max), gtype=gtype, n_frames=nframes)
+  File "./aertb/core/viz.py", line 87, in make_gif
+    frame = get_frame(filtered_events, clean, gtype)
+  File "/Users/rafaelmosca/opt/anaconda3/lib/python3.7/site-packages/gif.py", line 26, in wrapper
+    func(*args, **kwargs)
+TypeError: get_frame() takes 1 positional argument but 3 were given
+
+2020-07-18 21:38:22,154 [INFO] Calling makegif with params ['example_data/dat/cars/obj_004414_td.dat', None, 'std.gif', 'both', 'decay']
+2020-07-18 21:38:22,156 [INFO] Processing 1756.0 events
+2020-07-18 21:38:22,179 [INFO] Duration 0.099935, Delta 0.008327916885415712 Tau 0.002081979221353928
+2020-07-18 21:40:29,738 [INFO] Calling makegif with params ['example_data/dat/cars/obj_004414_td.dat', None, 'std.gif', 'both', 'decay']
+2020-07-18 21:40:29,739 [INFO] Processing 1756.0 events
+2020-07-18 21:40:29,758 [INFO] Duration 0.099935, Delta 0.008327916885415712 Tau 0.025
+2020-07-18 21:42:03,396 [INFO] Calling makegif with params ['example_data/dat/cars/obj_004414_td.dat', None, 'std.gif', 'both', 'decay']
+2020-07-18 21:42:03,397 [INFO] Processing 1756.0 events
+2020-07-18 21:42:03,410 [INFO] Duration 0.099935, Delta 0.008327916885415712 Tau 0.002081979221353928
+2020-07-18 21:42:27,639 [INFO] Calling makegif with params ['example_data/dat/cars/obj_004414_td.dat', None, 'std.gif', 'both', 'std']
+2020-07-18 21:42:27,639 [INFO] Processing 1756.0 events
+2020-07-18 21:42:27,650 [INFO] Duration 0.099935, Delta 0.008327916885415712 Tau 0.002081979221353928
+2020-07-18 21:42:52,507 [INFO] Calling makegif with params ['example_data/dat/cars/obj_004414_td.dat', None, 'std.gif', 'both', 'std']
+2020-07-18 21:42:52,508 [INFO] Processing 1756.0 events
+2020-07-18 21:42:52,521 [INFO] Duration 0.099935, Delta 0.016655833770831425 Tau 0.004163958442707856
+2020-07-18 21:43:57,578 [INFO] Calling makegif with params ['example_data/dat/cars/obj_004416_td.dat', None, 'std.gif', 'both', 'std']
+2020-07-18 21:43:57,581 [INFO] Processing 7102.0 events
+2020-07-18 21:43:57,621 [INFO] Duration 0.099966, Delta 0.01666099950671196 Tau 0.00416524987667799
+2020-07-18 21:44:12,291 [INFO] Calling makegif with params ['example_data/dat/cars/obj_004416_td.dat', None, 'decay.gif', 'both', 'decay']
+2020-07-18 21:44:12,292 [INFO] Processing 7102.0 events
+2020-07-18 21:44:12,358 [INFO] Duration 0.099966, Delta 0.00833049975335598 Tau 0.002082624938338995
+2020-07-18 21:45:12,566 [INFO] Calling makegif with params ['example_data/dat/cars/obj_004416_td.dat', None, 'decay.gif', 'both', 'decay']
+2020-07-18 21:45:12,567 [INFO] Processing 7102.0 events
+2020-07-18 21:45:12,613 [INFO] Duration 0.099966, Delta 0.00833049975335598 Tau 0.00833049975335598
+2020-07-18 23:22:01,570 [INFO] Calling tohdf5 with params ['example_data/dat', 'dat', 'mytest.h5', [0, 1]]
+2020-07-18 23:22:01,581 [INFO] Processing example_data/dat
+2020-07-18 23:22:01,582 [INFO] Files: []
+2020-07-18 23:22:01,582 [INFO] Processing directories: ['background', 'cars'] 
+2020-07-18 23:22:01,582 [INFO] Processing example_data/dat/background
+2020-07-18 23:22:01,582 [INFO] Files: ['obj_004212_td.dat', 'obj_004213_td.dat', 'obj_004211_td.dat']
+2020-07-18 23:22:01,584 [INFO] Found the following valid files ['obj_004212_td.dat', 'obj_004213_td.dat', 'obj_004211_td.dat'] in example_data/dat/background
+2020-07-18 23:22:01,597 [INFO] Processing 540.0 events
+2020-07-18 23:22:01,611 [INFO] Processing 920.0 events
+2020-07-18 23:22:01,613 [INFO] Processing 1374.0 events
+2020-07-18 23:22:01,617 [INFO] Processing example_data/dat/cars
+2020-07-18 23:22:01,617 [INFO] Files: ['obj_004416_td.dat', 'obj_004414_td.dat', 'obj_004415_td.dat']
+2020-07-18 23:22:01,617 [INFO] Found the following valid files ['obj_004416_td.dat', 'obj_004414_td.dat', 'obj_004415_td.dat'] in example_data/dat/cars
+2020-07-18 23:22:01,619 [INFO] Processing 7102.0 events
+2020-07-18 23:22:01,626 [INFO] Processing 1756.0 events
+2020-07-18 23:22:01,657 [INFO] Processing 4977.0 events
+2020-07-18 23:23:37,354 [WARNING] Traceback (most recent call last):
+  File "/Users/rafaelmosca/Library/Mobile Documents/com~apple~CloudDocs/Thesis/RLSNN/code/aer_toolbox/aertb_env/lib/python3.7/site-packages/click_shell/core.py", line 34, in invoke_
+    command.main(args=shlex.split(arg),
+  File "/Users/rafaelmosca/opt/anaconda3/lib/python3.7/shlex.py", line 310, in split
+    return list(lex)
+  File "/Users/rafaelmosca/opt/anaconda3/lib/python3.7/shlex.py", line 299, in __next__
+    token = self.get_token()
+  File "/Users/rafaelmosca/opt/anaconda3/lib/python3.7/shlex.py", line 109, in get_token
+    raw = self.read_token()
+  File "/Users/rafaelmosca/opt/anaconda3/lib/python3.7/shlex.py", line 191, in read_token
+    raise ValueError("No closing quotation")
+ValueError: No closing quotation
+
+2020-07-18 23:23:44,121 [INFO] Calling tohdf5 with params ['example_data/bin/one/03263.bin', None, 'mytest2.h5', [0, 1]]
