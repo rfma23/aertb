@@ -40,7 +40,7 @@ tohdf5 -f 'example_data/dat' -e 'dat' -o 'mytest.h5'
 ```
 Directory should be structured:
 
-    |--Parent (given as parameter)
+    |--Parent_dir (given as parameter)
         |-- A
             |-- File1
             |-- File2
