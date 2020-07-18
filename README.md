@@ -19,7 +19,7 @@ The file extensions supported are:
 
 ### Opening the CLI
   1. In order to open it, navigate to path where the library is installed, in case of problems download you should 
-  download the project from github and follow the following instructions:
+  download the project from github ( `git clone https://github.com/rfma23/aertb.git` )and follow the following instructions:
      - Create a virual environment (if not installed run `pip install virtualenv`)
               by typing `python3 -m venv aertb_env`
      - On Linux/MacOS run `source aertb_env/bin/activate`
