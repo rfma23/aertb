@@ -27,37 +27,37 @@ Using the CLI
 
   2. type `help` to see supported commands and `help <topic>` to get more info of the command
 
-  Examples:
+## Examples:
 
-    Creating an HDF5 out of a directory
-    ```
-        tohdf5 -f 'example_data/dat' -e 'dat' -o 'mytest.h5'
-    ```
-    Directory should be structured:
+### Creating an HDF5 out of a directory
+```
+tohdf5 -f 'example_data/dat' -e 'dat' -o 'mytest.h5'
+```
+Directory should be structured:
 
-       |--Parent (given as parameter)
-            |-- A
-                |-- File1
-                |-- File2
-                |-- ....
-            |-- B
-                |-- File1
-                |-- File2
-                |-- ....
-            |-- ...
+   |--Parent (given as parameter)
+        |-- A
+            |-- File1
+            |-- File2
+            |-- ....
+        |-- B
+            |-- File1
+            |-- File2
+            |-- ....
+        |-- ...
 
-    Creating an HDF5 out of a single file
-    ```
-        tohdf5 -f 'example_data/bin/one/03263.bin' -o 'mytest2.h5'
-    ```
+### Creating an HDF5 out of a single file
+```
+tohdf5 -f 'example_data/bin/one/03263.bin' -o 'mytest2.h5'
+```
 
 
-    Creating a gif out of a given file
-    ```
-        makegif -f 'example_data/dat/cars/obj_004416_td.dat' -o 'decay.gif' -nfr 12 -g 'decay'
-    ```
+### Creating a gif out of a given file
+```
+makegif -f 'example_data/dat/cars/obj_004416_td.dat' -o 'decay.gif' -nfr 12 -g 'decay'
+```
 
-Exiting the CLI:
+## Exiting the CLI:
 
 1. type `quit`
-2. Exit virtual environment `deactivate`
+2. Exit virtual environment: `$ deactivate`
