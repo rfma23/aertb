@@ -48,11 +48,25 @@ class AedatLoader(FileLoaderInterface):
         f = open(filename, "rb")
 
         # Read Header
-        f.readline()  # Version
-        f.readline()  # Description 1
-        f.readline()  # Description 2
-        f.readline()  # Description 3
-        f.readline()  # Date
+
+        # Read Header
+        parsedHeader = False
+        header = []
+
+        while parsedHeader is False:
+
+            two_bytes = f.read(1)
+            # if they match a comment syntax
+            if two_bytes==b'#': 
+                # reset file cursor
+                f.seek(-1, 1) 
+                # read whole line
+                header.append(f.readline()) # 
+            else:
+                # signal header is parsed
+                parsedHeader = True
+
+        f.seek(-1, 1)
 
         # Compute number of events
         start = f.tell()

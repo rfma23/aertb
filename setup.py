@@ -18,11 +18,11 @@ with open('README.md', 'r') as f:
 
 setup(
     name='aertb',
-    version="0.1.2",
+    version="0.1.3",
     author="Rafael Mosca",
     author_email="rafael.mosca@mail.polimi.it",
     url='https://github.com/rfma23',
-    packages=["aertb"],
+    packages=["aertb", "aertb.core", "aertb.core.loaders"],
     keywords = ['aedat', 'aer', 'dat', 'event', 'camera'],
     classifiers=list(filter(None, metadata.split('\n'))),
     long_description=long_description,

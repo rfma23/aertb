@@ -17,7 +17,7 @@ import click
 import os
 
 from aertb.core import FileLoader
-from aertb import make_gif
+from aertb.core import make_gif
 
 # =============================================================================
 #                     SHELL

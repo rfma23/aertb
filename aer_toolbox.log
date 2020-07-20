@@ -693,3 +693,53 @@ TypeError: get_frame() takes 1 positional argument but 3 were given
 ValueError: No closing quotation
 
 2020-07-18 23:23:44,121 [INFO] Calling tohdf5 with params ['example_data/bin/one/03263.bin', None, 'mytest2.h5', [0, 1]]
+2020-07-20 11:17:42,557 [INFO] Calling tohdf5 with params ['example_data/dat/cars/obj_004415_td.dat', None, 'cameraEvents.h5', [0, 1]]
+2020-07-20 11:17:42,571 [INFO] Processing 4977.0 events
+2020-07-20 11:19:04,801 [INFO] Calling makegif with params ['example_data/dat/cars/obj_004415_td.dat', None, 'testProphesee.gif', 'both', 'decay']
+2020-07-20 11:19:04,803 [INFO] Processing 4977.0 events
+2020-07-20 11:19:04,837 [INFO] Duration 0.099904, Delta 0.012488000094890594 Tau 0.012488000094890594
+2020-07-20 11:23:12,086 [INFO] Calling makegif with params ['example_data/mixed/recording.dat', None, 'testProphesee.gif', 'both', 'decay']
+2020-07-20 11:23:12,088 [INFO] Processing 30854479.0 events
+2020-07-20 11:24:21,984 [INFO] Calling tohdf5 with params ['example_data/mixed/recording.dat', None, 'cameraEvents.h5', [0, 1]]
+2020-07-20 11:24:21,986 [INFO] Processing 30854479.0 events
+2020-07-20 11:31:20,797 [INFO] Calling makegif with params ['example_data/dat/cars/obj_004415_td.dat', None, 'testProphesee.gif', 'both', 'decay']
+2020-07-20 11:31:20,799 [INFO] Processing 4977.0 events
+2020-07-20 11:31:20,833 [INFO] Duration 0.099904, Delta 0.012488000094890594 Tau 0.012488000094890594
+2020-07-20 11:32:17,984 [INFO] Calling tohdf5 with params ['example_data/dat/cars/obj_004415_td.dat', None, 'myFile.h5', [0, 1]]
+2020-07-20 11:32:17,986 [INFO] Processing 4977.0 events
+2020-07-20 13:38:04,318 [INFO] Calling makegif with params ['example_data/aedat/cards_1.aedat', 'aedat', 'std.gif', 'both', 'std']
+2020-07-20 13:38:04,319 [INFO] Processing 598882.0 events
+2020-07-20 13:38:07,704 [INFO] Duration 2.207847, Delta 0.18398725986480713 Tau 0.18398725986480713
+2020-07-20 13:39:09,178 [INFO] Calling makegif with params ['example_data/dat/cars/obj_004415_td.dat', None, 'testProphesee.gif', 'both', 'decay']
+2020-07-20 13:39:09,180 [INFO] Processing 4977.0 events
+2020-07-20 13:39:09,209 [INFO] Duration 0.099904, Delta 0.016650666793187458 Tau 0.016650666793187458
+2020-07-20 13:39:23,510 [INFO] Calling makegif with params ['example_data/dat/cars/obj_004415_td.dat', None, 'testProphesee.gif', 'both', 'decay']
+2020-07-20 13:39:23,511 [INFO] Processing 4977.0 events
+2020-07-20 13:39:23,539 [INFO] Duration 0.099904, Delta 0.008325333396593729 Tau 0.008325333396593729
+2020-07-20 13:40:13,544 [INFO] Calling tohdf5 with params ['example_data/mixed/recording.dat', None, 'cameraEvents.h5', [0, 1]]
+2020-07-20 13:40:13,565 [INFO] Processing 30854479.0 events
+2020-07-20 14:03:17,966 [INFO] Calling tohdf5 with params ['example_data/mixed/recording.dat', None, 'cameraEvents.h5', [0, 1]]
+2020-07-20 14:03:17,990 [WARNING] Traceback (most recent call last):
+  File "/Users/rafaelmosca/opt/anaconda3/lib/python3.7/site-packages/click_shell/core.py", line 37, in invoke_
+    parent=self.ctx)
+  File "/Users/rafaelmosca/opt/anaconda3/lib/python3.7/site-packages/click/core.py", line 782, in main
+    rv = self.invoke(ctx)
+  File "/Users/rafaelmosca/opt/anaconda3/lib/python3.7/site-packages/click/core.py", line 1066, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "/Users/rafaelmosca/opt/anaconda3/lib/python3.7/site-packages/click/core.py", line 610, in invoke
+    return callback(*args, **kwargs)
+  File "./__main__.py", line 76, in tohdf5
+    fl.create_hdf5_dataset(out, file, polarities)
+  File "./aertb/core/file_loader.py", line 76, in create_hdf5_dataset
+    with h5py.File(dataset_name, 'w') as fp:
+  File "/Users/rafaelmosca/opt/anaconda3/lib/python3.7/site-packages/h5py/_hl/files.py", line 408, in __init__
+    swmr=swmr)
+  File "/Users/rafaelmosca/opt/anaconda3/lib/python3.7/site-packages/h5py/_hl/files.py", line 179, in make_fid
+    fid = h5f.create(name, h5f.ACC_TRUNC, fapl=fapl, fcpl=fcpl)
+  File "h5py/_objects.pyx", line 54, in h5py._objects.with_phil.wrapper
+  File "h5py/_objects.pyx", line 55, in h5py._objects.with_phil.wrapper
+  File "h5py/h5f.pyx", line 108, in h5py.h5f.create
+OSError: Unable to create file (unable to lock file, errno = 35, error message = 'Resource temporarily unavailable')
+
+2020-07-20 14:03:24,616 [INFO] Calling tohdf5 with params ['example_data/mixed/recording.dat', None, 'cameraEvents.h5', [0, 1]]
+2020-07-20 14:03:24,620 [INFO] Processing 30854479.0 events

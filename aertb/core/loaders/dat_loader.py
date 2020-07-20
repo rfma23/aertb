@@ -48,26 +48,34 @@ class DatLoader(FileLoaderInterface):
         f = open(filename, "rb")
 
         # Read Header
-        f.readline() # Title
-        f.readline() # Version
-        f.readline() # Date
+        parsedHeader = False
+        header = []
 
-        # read two bytes ?? dunno why
-        # took a while to figure out how to make things work
-        # this made it work
-        f.read(2)
+        while parsedHeader is False:
+
+            two_bytes = f.read(2)
+            # if they match a comment syntax
+            if (two_bytes==b'% '): 
+                # reset file cursor
+                f.seek(-2, 1) 
+                # read whole line
+                header.append(f.readline()) # 
+            else:
+                # signal header is parsed
+                parsedHeader = True
 
         # Compute number of events
         start = f.tell()
         end = f.seek(0, 2)
         n_events = (end-start)/8
-
         logging.info(f'Processing {n_events} events')
 
         # Reposition file cursor
         f.seek(-(end-start), 1)
 
         prophesee_events = np.fromfile(f, dtype=prophesee_event_dtype, count=-1)
+
+        f.close()
 
         x = np.bitwise_and(prophesee_events['xyp'], int('00003FFF', HEX))
         y = np.right_shift(np.bitwise_and(prophesee_events['xyp'], int('0FFFC000', HEX)), 14)
@@ -86,3 +94,4 @@ class DatLoader(FileLoaderInterface):
         recarray = np.rec.fromarrays([x,y,ts,p], dtype=event_dtype)
 
         return recarray
+
