@@ -35,16 +35,16 @@ tohdf5 -f 'example_data/dat' -e 'dat' -o 'mytest.h5'
 ```
 Directory should be structured:
 
-   |--Parent (given as parameter)
-        |-- A
-            |-- File1
-            |-- File2
-            |-- ....
-        |-- B
-            |-- File1
-            |-- File2
-            |-- ....
-        |-- ...
+     |--Parent (given as parameter)
+          |-- A
+              |-- File1
+              |-- File2
+              |-- ....
+          |-- B
+              |-- File1
+              |-- File2
+              |-- ....
+          |-- ...
 
 ### Creating an HDF5 out of a single file
 ```
