@@ -2,7 +2,7 @@
 This library intends to be a minimal tool for loading events from files with common event-camera file extensions into
 Python.
 
-See the project on [PyPI](https://pypi.org/project/aertb/).
+See the project on [PyPI](https://pypi.org/project/aertb/) or do `pip3 install aertb`
 
 ### Usage
 ```py
