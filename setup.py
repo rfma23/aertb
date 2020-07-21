@@ -16,19 +16,23 @@ metadata = """
 with open('README.md', 'r') as f:
     long_description = f.read()
 
+with open('requirements.txt') as f:
+    requirements = f.read().splitlines()
+
 setup(
     name='aertb',
-    version="0.2.0",
+    version="0.2.1",
     author="Rafael Mosca",
     author_email="rafael.mosca@mail.polimi.it",
     url='https://github.com/rfma23',
     # scripts=['bin/aertb_cli.py'],
     entry_points={
         'console_scripts': [
-            'aertb = cli:aertb_shell',
+            'aertb = cli.cli:aertb_shell',
         ],
     },
-    packages=["aertb", "aertb.core", "aertb.core.loaders"],
+    packages=["cli", "aertb", "aertb.core", "aertb.core.loaders"],
+    install_requires = requirements,
     keywords = ['aedat', 'aer', 'dat', 'event', 'camera'],
     classifiers=list(filter(None, metadata.split('\n'))),
     long_description=long_description,

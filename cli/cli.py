@@ -44,7 +44,7 @@ def aertb_shell():
 
 logging.basicConfig(level=logging.INFO,
                     format="%(asctime)s [%(levelname)s] %(message)s",
-                    handlers=[logging.FileHandler("aer_toolbox.log")])
+                    handlers=[logging.FileHandler("../aer_toolbox.log")])
 
 # =============================================================================
 #                     COMMANDS
