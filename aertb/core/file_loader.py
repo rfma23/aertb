@@ -11,10 +11,9 @@ __version__ = "1.0"
 
 # =============================================================================
 
-from os.path import join, isfile, isdir, splitext
+from os.path import join, isfile, splitext
 from tqdm import tqdm
 import logging
-import click
 import h5py
 import os
 
@@ -30,6 +29,11 @@ extensions = {'hdf5': ['.h5', '.hdf5', '.hdf', '.H5'],
 # =============================================================================
 
 class FileLoader:
+    '''
+        A File loader for a given file extension
+
+        :param extension: the file extension of the file
+    '''
 
     def __init__(self, extension):
 

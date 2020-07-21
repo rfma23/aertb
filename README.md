@@ -13,14 +13,15 @@ The library also includes a command line interface for converting files from a g
 making capabilities for easy visualisation of the files.
 
 Opening the CLI
-  1. In order to open it, navigate to path where the library is installed, in case of problems download you should download the project from github and follow the following instructions:
+  1. If the install with pip worked perfectly, you can now type `aertb` in a terminal window and the CLI will open.
+  
+  2. If you are installing it from Github: download you should download the project from github and follow the following instructions:
     - a  `git clone ...`
-    - b  Create a virual environment, if not installed run `pip install virtualenv`,
+    - b  Create a virual environment, if venv is not installed run `pip install virtualenv`,
               then `python3 -m venv aertb_env`
-    - c  On Linux/MacOS run `source aertb_env/bin/activate`
+    - c  Run `source aertb_env/bin/activate`
     - d  Run the following command: 'pip install -r requirements.txt'
-
-  3. Run `python3 .` or execute the `__main__.py` file
+    - e  Open the cli with `python3 .` or with the `__main__.py` file
 
 Using the CLI
   1. Once the CLI is open you get a a similar output on your terminal:

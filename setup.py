@@ -18,13 +18,20 @@ with open('README.md', 'r') as f:
 
 setup(
     name='aertb',
-    version="0.1.3",
+    version="0.2.0",
     author="Rafael Mosca",
     author_email="rafael.mosca@mail.polimi.it",
     url='https://github.com/rfma23',
+    # scripts=['bin/aertb_cli.py'],
+    entry_points={
+        'console_scripts': [
+            'aertb = cli:aertb_shell',
+        ],
+    },
     packages=["aertb", "aertb.core", "aertb.core.loaders"],
     keywords = ['aedat', 'aer', 'dat', 'event', 'camera'],
     classifiers=list(filter(None, metadata.split('\n'))),
     long_description=long_description,
     long_description_content_type='text/markdown'
 )
+
