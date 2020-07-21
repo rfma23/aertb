@@ -37,7 +37,7 @@ making capabilities for easy visualisation of the files.
 
 ### Using the CLI
   1. Once the CLI is open you get a a similar output on your terminal:
-
+    ![Cli Animation](https://github.com/rfma23/aertb/raw/master/aertb_cli_shell.gif)
   2. type `help` to see supported commands and `help <topic>` to get more info of the command
 
 ### Examples:
