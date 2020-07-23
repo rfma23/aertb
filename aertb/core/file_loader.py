@@ -49,7 +49,7 @@ class FileLoader:
             self._loader = AedatLoader()
 
         else:
-            raise ValueError('File extension not supported')
+            raise ValueError(f'File extension: {extension} not supported')
 
     # -------------------------------------------------------------------------
     def load_events(self, filename, polarities=[0, 1], to_secs=True):

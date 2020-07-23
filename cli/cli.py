@@ -72,6 +72,7 @@ def tohdf5(file, ext, out, polarities):
             click.secho(msg, bg='yellow')
             return
 
+    click.echo('Processing ...')
     fl = FileLoader(ext)
     fl.create_hdf5_dataset(out, file, polarities)
     click.secho('HDF5 file created successfully', bg='green')
@@ -106,6 +107,7 @@ def makegif(file, out, ext,  polarities, gtype, nframes):
             click.secho(msg, bg='yellow')
             return
 
+    click.echo('Processing ...')
     fl = FileLoader(ext)
     events = fl.load_events(file, [0, 1], to_secs=True)
 

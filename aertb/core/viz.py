@@ -15,9 +15,12 @@ import math
 import click
 import logging
 import numpy as np
+from tqdm import tqdm
 import matplotlib.pyplot as plt
 
 # =============================================================================
+
+
 
 def make_gif(events, filename='my_gif.gif', n_frames=8, tau=None,
              camera_size=(34,34),clean=False, R=1, val=2, clean_tau=0.005,
@@ -70,17 +73,15 @@ def make_gif(events, filename='my_gif.gif', n_frames=8, tau=None,
         else:
             raise ValueError('Not a valid visualisation type')
 
-
-
     duration = events[-1]['ts'] - events[0]['ts']
     min_ts = events[0]['ts']
     delta = duration / n_frames
     if tau is None: tau = delta
 
     logging.info(f'Duration {duration:6f}, Delta {delta} Tau {tau}')
-    
+    click.echo('Generating frames ... (may take a while on big image sensors)')
     frames = []
-    for i in range(n_frames):
+    for i in tqdm(range(n_frames)):
         time_filter = (min_ts + delta*(i) <= events['ts'])*(events['ts'] < min_ts + delta*(i+1))
         filtered_events = events[time_filter]
         frame = get_frame(filtered_events, clean, gtype)

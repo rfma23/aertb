@@ -16,5 +16,10 @@ from collections import namedtuple
 event_dtype = np.dtype([('x', np.uint16), ('y', np.uint16),
                         ('ts', np.float32), ('p', np.int8)])
 
+stereo_event_dtype = np.dtype([('x', np.uint16), ('y', np.uint16),
+                               ('ts', np.float32), ('p', np.int8),
+                               ('x_', np.float32), ('y_', np.float32),
+                               ('z_', np.float32), ('d_', np.float32)])
+
 Sample = namedtuple('Sample', ['name', 'label', 'events'])
 # =============================================================================
