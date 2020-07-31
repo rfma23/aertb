@@ -37,7 +37,7 @@ making capabilities for easy visualisation of the files.
 
 ### Using the CLI
   1. Once the CLI is open you get a a similar output on your terminal:
-    ![Cli Animation](https://github.com/rfma23/aertb/raw/master/aertb_cli_shell.gif)
+    ![Cli Animation](https://github.com/rfma23/aertb/raw/master/images/aertb_cli_shell.gif)
   2. type `help` to see supported commands and `help <topic>` to get more info of the command
 
 ### Examples:
@@ -72,7 +72,7 @@ tohdf5 -f 'example_data/bin/one/03263.bin' -o 'mytest2.h5'
 makegif -f 'example_data/prophesee_dat/test_23l_td.dat' -o 'myGif.gif' -nfr 240 -g 'std'
 ```
 
- ![Gif Animation](https://github.com/rfma23/aertb/raw/master/myGif.gif)
+ ![Gif Animation](https://github.com/rfma23/aertb/raw/master/images/myGif.gif)
 
 
 ### Exiting the CLI:
