@@ -22,4 +22,5 @@ stereo_event_dtype = np.dtype([('x', np.uint16), ('y', np.uint16),
                                ('z_', np.float32), ('d_', np.float32)])
 
 Sample = namedtuple('Sample', ['name', 'label', 'events'])
+EvSample = namedtuple('EvSample', ['label', 'name', 'events'])
 # =============================================================================
