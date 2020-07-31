@@ -1,11 +1,8 @@
-# aertb [![PyPI version](https://badge.fury.io/py/aertb.svg)](https://badge.fury.io/py/aertb)
-
+# AER-toolbox
 This library intends to be a minimal tool for loading events from files with common event-camera file extensions into
 Python.
 
-To install simply the address event representation toolbox (aertb), simply do 
-
-        pip3 install aertb
+See the project on [PyPI](https://pypi.org/project/aertb/) or do `pip3 install aertb`
 
 ### Usage
 ```py
@@ -72,8 +69,11 @@ tohdf5 -f 'example_data/bin/one/03263.bin' -o 'mytest2.h5'
 
 ####  Creating a gif out of a given file
 ```
-makegif -f 'example_data/dat/cars/obj_004416_td.dat' -o 'decay.gif' -nfr 12 -g 'decay'
+makegif -f 'example_data/prophesee_dat/test_23l_td.dat' -o 'myGif.gif' -nfr 240 -g 'std'
 ```
+
+ ![Gif Animation](https://github.com/rfma23/aertb/raw/master/myGif.gif)
+
 
 ### Exiting the CLI:
 

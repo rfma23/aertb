@@ -21,7 +21,7 @@ with open('requirements.txt') as f:
 
 setup(
     name='aertb',
-    version="0.2.4",
+    version="0.3.0",
     author="Rafael Mosca",
     author_email="rafael.mosca@mail.polimi.it",
     url='https://github.com/rfma23',
