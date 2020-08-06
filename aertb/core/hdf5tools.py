@@ -154,7 +154,7 @@ class HDF5File:
                 to_sample = len(group_samples)
 
             else:
-                to_sample = n_samples
+                to_sample = n_samples_group
 
             # Within group selection
             if rand < 0:
