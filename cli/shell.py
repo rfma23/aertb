@@ -11,6 +11,7 @@ __version__     = "1.0"
 # =============================================================================
 
 from click_shell import shell
+from cli.click_gui import gui_it, gui_option
 import numpy as np
 import logging
 import click
@@ -22,21 +23,23 @@ from aertb.core import make_gif
 # =============================================================================
 #                     SHELL
 # =============================================================================
+#@gui_option
+#@gui_it
+#click.group()
 @shell(prompt='[AER-TB] $ ', intro=click.style("""
- █████╗ ███████╗██████╗    ████████╗██████╗ 
+ █████╗ ███████╗██████╗    ████████╗██████╗
 ██╔══██╗██╔════╝██╔══██╗   ╚══██╔══╝██╔══██╗
 ███████║█████╗  ██████╔╝█████╗██║   ██████╔╝
 ██╔══██║██╔══╝  ██╔══██╗╚════╝██║   ██╔══██╗
 ██║  ██║███████╗██║  ██║      ██║   ██████╔╝
-╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝      ╚═╝   ╚═════╝ 
-                                            
+╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝      ╚═╝   ╚═════╝
+
 > An Address Event Representation toolbox for different file extensions.
 > Type 'help' to see supported commands.
 > Project by Rafael Mosca - https://rfma23.github.io
 """))
-def aertb_shell():
+def aertb_shell(**argvs):
     pass
-
 
 # =============================================================================
 #                     GLOBALS
@@ -80,17 +83,17 @@ def tohdf5(file, ext, out, polarities):
 
 # ------------------------------------------------------------------------------
 @aertb_shell.command()
-@click.option("-f", "--file", type=str, default='/',
+@click.option("-f", "--file", type=click.Path(exists=True), default='/',
               help="Defines the location of the parent directory")
-@click.option("-o", "--out", type=str, default='my_dataset.hdf5',
+@click.option("-o", "--out", type=click.Path(), default='my_dataset.hdf5',
               help="Defines the path and name of the output file")
 @click.option("-e", "--ext", type=str, default=None,
               help="Defines the file extension to process. Should not include a "
                    "leading dot")
-@click.option("-p", "--polarities", type=str, default='both',
-              help="Defines the polarities considered {pos, neg, both}")
-@click.option("-g", "--gtype", type=str, default='decay',
-              help="Defines the type of gif visualization considered {decay, std}")
+@click.option("-p", "--polarities", type=click.Choice(['both', 'pos', 'neg']), default='both',
+              help="Defines the polarities considered.")
+@click.option("-g", "--gtype", type=click.Choice(['decay', 'std']), default='std',
+              help="Defines the type of gif visualization considered")
 @click.option("-nfr", "--nframes", type=int, default=8,
               help="Defines the number of frames produced for the gif")
 def makegif(file, out, ext,  polarities, gtype, nframes):

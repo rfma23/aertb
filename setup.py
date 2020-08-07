@@ -21,14 +21,14 @@ with open('requirements.txt') as f:
 
 setup(
     name='aertb',
-    version="0.3.0",
+    version="0.3.3",
     author="Rafael Mosca",
     author_email="rafael.mosca@mail.polimi.it",
     url='https://github.com/rfma23',
     # scripts=['bin/aertb_cli.py'],
     entry_points={
         'console_scripts': [
-            'aertb = cli.cli:aertb_shell',
+            'aertb = cli.shell:aertb_shell',
         ],
     },
     packages=["cli", "aertb", "aertb.core", "aertb.core.loaders"],
