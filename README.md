@@ -13,11 +13,12 @@ datLoader.load_events('../example_data/dat/cars/obj_004414_td.dat')
 ```
 It also make the process of loading and iterating HDF5 files easier.
 ```py
-from aertb.core import HDF5FileIterator
+from aertb.core import HDF5File
 
-trainIterator = HDF5FileIterator('myfile.h5', groups='all', n_samples='all', rand=-1)
+dataset_train = HDF5File('TRAIN.h5')
+train_iterator = dataset_train.iterator(n_samples_group=10, rand=23)
 
-for sample in tqdm(trainIterator):
+for sample in tqdm(train_iterator):
     # do something with sample.events, sample.label or sample.name
 ```
 The library also includes a command line interface for converting files from a given extension to hdf5, as well as gif
