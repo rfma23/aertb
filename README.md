@@ -12,7 +12,7 @@ datLoader = FileLoader('dat') # 'bin', or 'aedat'
 datLoader.load_events('../example_data/dat/cars/obj_004414_td.dat')
 ```
 
-Particularly useful for:
+Supported extensions:
 
  - `.dat`: N-Cars / Prophesee Cameras
  - `.bin`: N-MNIST, N-Caltech101
