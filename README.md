@@ -11,6 +11,14 @@ from aertb.core import FileLoader
 datLoader = FileLoader('dat') # 'bin', or 'aedat'
 datLoader.load_events('../example_data/dat/cars/obj_004414_td.dat')
 ```
+
+Particularly useful for:
+
+ - `.dat`: N-Cars / Prophesee Cameras
+ - `.bin`: N-MNIST, N-Caltech101
+ - `.aedat`: PokerDVS
+ - `.mat`: DVS-Barrel
+ 
 It also make the process of loading and iterating HDF5 files easier.
 ```py
 from aertb.core import HDF5File
