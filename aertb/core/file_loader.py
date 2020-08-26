@@ -17,9 +17,10 @@ import logging
 import h5py
 import os
 
-from aertb.core.loaders import BinLoader, DatLoader, AedatLoader
+from aertb.core.loaders import BinLoader, DatLoader, AedatLoader, MatLoader
 
 # =============================================================================
+
 extensions = {'hdf5': ['.h5', '.hdf5', '.hdf', '.H5'],
               'dat': ['.dat', '.Dat'],
               'aedat': ['.aedat', '.Aedat'],
@@ -47,6 +48,9 @@ class FileLoader:
 
         elif extension in {'aedat', '.aedat'}:
             self._loader = AedatLoader()
+
+        elif extension in {'mat', '.mat'}:
+            self._loader = MatLoader()
 
         else:
             raise ValueError(f'File extension: {extension} not supported')
@@ -120,7 +124,7 @@ class FileLoader:
             group = fp.create_group(dir_name)
             logging.info(f'Found the following valid files {valid_files} in {dir_path}')
 
-            for file in tqdm(valid_files):
+            for file in tqdm(valid_files, desc=f'Dir: {dir_name}'):
 
                 events = self._loader.load_events(join(dir_path, file), polarities, to_secs)
 
