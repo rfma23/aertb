@@ -1,4 +1,6 @@
 # AER-toolbox
+[![Documentation Status](https://readthedocs.org/projects/aertb/badge/?version=latest)](https://aertb.readthedocs.io/en/latest/?badge=latest)
+
 This library intends to be a minimal tool for loading events from files with common event-camera file extensions into
 Python.
 
