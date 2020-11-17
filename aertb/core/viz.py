@@ -20,73 +20,95 @@ import matplotlib.pyplot as plt
 
 # =============================================================================
 
+def make_gif(events, filename='my_gif.gif', n_frames=8, f_type='decay', axis=False, **kwargs):
+    """Creates a GIF from the passed events with the specified number of frames. 
+        additional paramters such as 'tau' for the exponential decay 'duration' 
+        for the length of the GIF (default 200), etc. are specified as keyword 
+        arguments (**kwargs)
 
+    Parameters
+    ----------
+    events : np.array
+        the events to be used for the GIF
+    filename : str, optional
+        the path+name for the gif file, by default 'my_gif.gif'
+    n_frames : int, optional
+        the number of frames that will be computed, by default 8
+    f_type : str, optional
+        the type of frame used:
+        'nop' - no polarity, 
+        'decay' - nop+exponential decay,
+        'std' - pos/neg polarity, 
+        by default 'decay'
+    axis : bool, optional
+        determines whether the GIF should show axis labels, by default False
 
-def make_gif(events, filename='my_gif.gif', n_frames=8, tau=None,
-             camera_size=(34,34),clean=False, R=1, val=2, clean_tau=0.005,
-             gtype='decay'):
-
+    Raises
+    ------
+    ValueError
+        When an invalid frame type is selected
+    """
+    
     @gif.frame
-    def get_frame(frame_events, clean, gtype):
+    def get_frame(frame_events, f_type):
 
-        if gtype == 'decay':
-            if clean:
-                mask = np.zeros(camera_size, dtype=np.float32)
-                canvas = np.zeros(camera_size, dtype=np.float32)
-                last_ts = 0
+        if f_type == 'decay':
+            canvas = np.zeros((camera_size), dtype=np.float32)
+            last_ts = 0
 
-                for event in frame_events:
-                    mask   = np.multiply(mask, math.exp(-(event['ts']-last_ts)/clean_tau))
-                    canvas = np.multiply(canvas, math.exp(-(event['ts']-last_ts)/tau))
-
-                    # keep track of active regions
-                    x_bounds = (max(0, event['x']-R), min(camera_size[0], event['x']+R+1))
-                    y_bounds = (max(0, event['y']-R), min(camera_size[1], event['y']+R+1))
-                    mask[y_bounds[0]:y_bounds[1], x_bounds[0]:x_bounds[1]] += 1
-
-                    canvas[event['y'], event['x']] += 1
-
-                    canvas = np.multiply(canvas, (mask > val).astype(int))
-
-                    last_ts = event['ts']
-
-            else:
-                canvas = np.zeros((camera_size), dtype=np.float32)
-                last_ts = 0
-
-                for event in frame_events:
-                    canvas = np.multiply(canvas, math.exp(-(event['ts']-last_ts)/tau))
-                    canvas[event['y'], event['x']] += 1
-                    last_ts = event['ts']
+            for event in frame_events:
+                canvas = np.multiply(canvas, math.exp(-(event['ts']-last_ts)/tau))
+                canvas[event['y'], event['x']] += 1
+                last_ts = event['ts']
 
             plt.imshow(canvas, cmap='hot')
 
-        elif gtype == 'std':
+        elif f_type == 'std':
             polarity_mapper = {0: -1, -1: -1, 1:1}
 
             canvas = np.zeros(camera_size, dtype=np.float32)
             for event in frame_events:
                 canvas[event['y'], event['x']] = polarity_mapper[event['p']]
-
+            
+            if axis is False:
+                plt.xticks([])
+                plt.yticks([])
+                
             plt.imshow(canvas, cmap='gray', vmin=-1, vmax=1)
+        
+        elif f_type == 'nop':
+            polarity_mapper = {0: 1, -1: 1, 1:1}
 
+            canvas = np.zeros(camera_size, dtype=np.float32)
+            for event in frame_events:
+                canvas[event['y'], event['x']] = polarity_mapper[event['p']]
+            
+            if axis is False:
+                plt.xticks([])
+                plt.yticks([])
+                
+            plt.imshow(canvas, cmap='gray', vmin=0, vmax=1)
+            
         else:
             raise ValueError('Not a valid visualisation type')
-
+    
+    # create frame slice
     duration = events[-1]['ts'] - events[0]['ts']
     min_ts = events[0]['ts']
     delta = duration / n_frames
-    if tau is None: tau = delta
-
-    logging.info(f'Duration {duration:6f}, Delta {delta} Tau {tau}')
-    click.echo('Generating frames ... (may take a while on big image sensors)')
+    
+    camera_size = (max(events['x'])+1, max(events['y'])+1)
+    
+    if f_type == 'decay':
+        tau = kwargs.get('tau', delta)
+        
     frames = []
-    for i in tqdm(range(n_frames)):
+    
+    for i in tqdm(range(n_frames), desc='GIF Frames', unit='frame'):
         time_filter = (min_ts + delta*(i) <= events['ts'])*(events['ts'] < min_ts + delta*(i+1))
         filtered_events = events[time_filter]
-        frame = get_frame(filtered_events, clean, gtype)
+        frame = get_frame(filtered_events, f_type)
         frames.append(frame)
-
+    
+    duration = kwargs.get('duration', 2)
     gif.save(frames, filename, duration=200)
-
-# =============================================================================

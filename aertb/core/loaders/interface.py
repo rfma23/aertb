@@ -14,11 +14,15 @@ from abc import ABC, abstractmethod
 
 # =============================================================================
 
-class FileLoaderInterface(ABC):
+class LoaderInterface(ABC):
 
     def __init__(self):
         super().__init__()
 
     @abstractmethod
-    def load_events(self):
+    def load_events(self, filename, polarities, to_secs):
+        pass
+
+    @abstractmethod
+    def get_header(self, filename):
         pass

@@ -1,0 +1,394 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Readme File &mdash; aertb 0.4.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="aertb.core" href="aertb.core.html" />
+    <link rel="prev" title="Welcome to aertb’s documentation!" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> aertb
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Overview:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Readme File</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#the-library">The Library</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#description">Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#usage">Usage</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="aertb.core.html">aertb.core</a></li>
+</ul>
+<p class="caption"><span class="caption-text">CLI/Shell:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="shell.html">Shell</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">aertb</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Readme File</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/overview.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="readme-file">
+<h1>Readme File<a class="headerlink" href="#readme-file" title="Permalink to this headline">¶</a></h1>
+<p># AER-toolbox
+This library intends to be a minimal tool for loading events from files with common event-camera file extensions into
+Python.</p>
+<p>See the project on [PyPI](<a class="reference external" href="https://pypi.org/project/aertb/">https://pypi.org/project/aertb/</a>) or do <cite>pip3 install aertb</cite></p>
+<p>### Usage
+<a href="#id1"><span class="problematic" id="id2">``</span></a><a href="#id3"><span class="problematic" id="id4">`</span></a>py
+from aertb.core import FileLoader</p>
+<p>datLoader = FileLoader(‘dat’) # ‘bin’, or ‘aedat’
+datLoader.load_events(‘../example_data/dat/cars/obj_004414_td.dat’)
+<a href="#id5"><span class="problematic" id="id6">``</span></a><a href="#id7"><span class="problematic" id="id8">`</span></a></p>
+<p>Supported extensions:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><cite>.dat</cite>: N-Cars / Prophesee Cameras</p></li>
+<li><p><cite>.bin</cite>: N-MNIST, N-Caltech101</p></li>
+<li><p><cite>.aedat</cite>: PokerDVS</p></li>
+<li><p><cite>.mat</cite>: DVS-Barrel</p></li>
+</ul>
+</div></blockquote>
+<p>It also make the process of loading and iterating HDF5 files easier.
+<a href="#id9"><span class="problematic" id="id10">``</span></a><a href="#id11"><span class="problematic" id="id12">`</span></a>py
+from aertb.core import HDF5File</p>
+<p>dataset_train = HDF5File(‘TRAIN.h5’)
+train_iterator = dataset_train.iterator(n_samples_group=10, rand=23)</p>
+<dl class="simple">
+<dt>for sample in tqdm(train_iterator):</dt><dd><p># do something with sample.events, sample.label or sample.name</p>
+</dd>
+</dl>
+<p><a href="#id13"><span class="problematic" id="id14">``</span></a><a href="#id15"><span class="problematic" id="id16">`</span></a></p>
+<p>Example: making a GIF
+<a href="#id17"><span class="problematic" id="id18">``</span></a><a href="#id19"><span class="problematic" id="id20">`</span></a>py
+from aertb.core import HDF5File, make_gif</p>
+<p>file = HDF5File(‘../DVS_Barrel.hdf5’)
+sample = file.load_events(group=’moving’, name=’11’)
+make_gif(sample, filename=’sample_moving.gif’, camera_size=(128, 128), n_frames=480, gtype=’std’)
+<a href="#id21"><span class="problematic" id="id22">``</span></a><a href="#id23"><span class="problematic" id="id24">`</span></a></p>
+<p>The library also includes a command line interface for converting files from a given extension to hdf5, as well as gif
+making capabilities for easy visualisation of the files.</p>
+<dl>
+<dt>### Opening the CLI</dt><dd><ol class="arabic simple">
+<li><p>If the install with pip worked perfectly, you can now type <cite>aertb</cite> in a terminal window and the CLI will open.</p></li>
+</ol>
+<p>2. If you are installing it from Github: download you should download the project from github and follow the following
+instructions:</p>
+<blockquote>
+<div><ul class="simple">
+<li><ol class="loweralpha simple">
+<li><p><cite>git clone …</cite></p></li>
+</ol>
+</li>
+<li><ol class="loweralpha simple" start="2">
+<li><dl class="simple">
+<dt>Create a virual environment, if venv is not installed run <cite>pip install virtualenv</cite>,</dt><dd><p>then <cite>python3 -m venv aertb_env</cite></p>
+</dd>
+</dl>
+</li>
+</ol>
+</li>
+<li><ol class="loweralpha simple" start="3">
+<li><p>Run <cite>source aertb_env/bin/activate</cite></p></li>
+</ol>
+</li>
+<li><ol class="loweralpha simple" start="4">
+<li><p>Run the following command: <cite>pip install -r requirements.txt</cite></p></li>
+</ol>
+</li>
+<li><ol class="loweralpha simple" start="5">
+<li><p>Open the cli with <cite>python3 .</cite> or with the <cite>__main__.py</cite> file</p></li>
+</ol>
+</li>
+</ul>
+</div></blockquote>
+</dd>
+<dt>### Using the CLI</dt><dd><ol class="arabic simple">
+<li><p>Once the CLI is open you get a a similar output on your terminal:</p></li>
+</ol>
+<blockquote>
+<div><p>![Cli Animation](<a class="reference external" href="https://github.com/rfma23/aertb/raw/master/images/aertb_cli_shell.gif">https://github.com/rfma23/aertb/raw/master/images/aertb_cli_shell.gif</a>)</p>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li><p>type <cite>help</cite> to see supported commands and <cite>help &lt;topic&gt;</cite> to get more info of the command</p></li>
+</ol>
+</dd>
+</dl>
+<p>### Examples:</p>
+<p>#### Creating an HDF5 out of a directory
+<code class="docutils literal notranslate"><span class="pre">`</span>
+<span class="pre">tohdf5</span> <span class="pre">-f</span> <span class="pre">'example_data/dat'</span> <span class="pre">-e</span> <span class="pre">'dat'</span> <span class="pre">-o</span> <span class="pre">'mytest.h5'</span>
+<span class="pre">`</span></code>
+The recommended directory shape is  :</p>
+<blockquote>
+<div><dl>
+<dt><a href="#id25"><span class="problematic" id="id26">|</span></a>–Parent (given as parameter)</dt><dd><dl class="simple">
+<dt><a href="#id27"><span class="problematic" id="id28">|</span></a>– LabelClass1</dt><dd><p><a href="#id29"><span class="problematic" id="id30">|</span></a>– SampleName1
+<a href="#id31"><span class="problematic" id="id32">|</span></a>– SampleName2
+<a href="#id33"><span class="problematic" id="id34">|</span></a>– ….</p>
+</dd>
+<dt><a href="#id35"><span class="problematic" id="id36">|</span></a>– LabelClass2</dt><dd><p><a href="#id37"><span class="problematic" id="id38">|</span></a>– SampleName1
+<a href="#id39"><span class="problematic" id="id40">|</span></a>– SampleName2
+<a href="#id41"><span class="problematic" id="id42">|</span></a>– ….</p>
+</dd>
+</dl>
+<p><a href="#id43"><span class="problematic" id="id44">|</span></a>– …</p>
+</dd>
+</dl>
+</div></blockquote>
+<p>And we suggest that train and test are kept as separate folders so they translate
+to two different files
+####  Creating an HDF5 out of a single file
+<code class="docutils literal notranslate"><span class="pre">`</span>
+<span class="pre">tohdf5</span> <span class="pre">-f</span> <span class="pre">'example_data/bin/one/03263.bin'</span> <span class="pre">-o</span> <span class="pre">'mytest2.h5'</span>
+<span class="pre">`</span></code></p>
+<p>####  Creating a gif out of a given file
+<code class="docutils literal notranslate"><span class="pre">`</span>
+<span class="pre">makegif</span> <span class="pre">-f</span> <span class="pre">'example_data/prophesee_dat/test_23l_td.dat'</span> <span class="pre">-o</span> <span class="pre">'myGif.gif'</span> <span class="pre">-nfr</span> <span class="pre">240</span> <span class="pre">-g</span> <span class="pre">'std'</span>
+<span class="pre">`</span></code></p>
+<blockquote>
+<div><p>![Gif Animation](<a class="reference external" href="https://github.com/rfma23/aertb/raw/master/images/myGif.gif">https://github.com/rfma23/aertb/raw/master/images/myGif.gif</a>)</p>
+</div></blockquote>
+<p>### Exiting the CLI:</p>
+<ol class="arabic simple">
+<li><p>type <cite>quit</cite></p></li>
+<li><p>Exit virtual environment: <cite>$ deactivate</cite></p></li>
+</ol>
+</div>
+<div class="section" id="the-library">
+<h1>The Library<a class="headerlink" href="#the-library" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>This library intends to be a minimal tool for loading and manipulating events in Python from
+files with common event-camera file extensions .</p>
+<p>See the project on <a class="reference external" href="https://pypi.org/project/aertb/">PyPI</a> or do <code class="code docutils literal notranslate"><span class="pre">pip3</span> <span class="pre">install</span> <span class="pre">aertb</span></code></p>
+</div>
+<div class="section" id="usage">
+<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">aertb.core.loaders</span> <span class="kn">import</span> <span class="n">PolarityEventFile</span>
+<span class="n">file</span> <span class="o">=</span> <span class="n">PolarityEventFile</span><span class="p">(</span><span class="s1">&#39;../myFile.myext&#39;</span><span class="p">)</span>
+<span class="c1"># handle every supported file extension</span>
+<span class="c1"># then file.header, file.get_events() ...</span>
+</pre></div>
+</div>
+<p>Supported extensions:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="code docutils literal notranslate"><span class="pre">.dat</span></code>: N-Cars / Prophesee Cameras</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">.bin</span></code>: N-MNIST, N-Caltech101</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">.aedat</span></code>: PokerDVS, PostureDVS</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">.mat</span></code>: DVS-Barrel</p></li>
+</ul>
+</div></blockquote>
+<p>It also make the process of loading and iterating HDF5 files easier.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">aertb.core</span> <span class="kn">import</span> <span class="n">HDF5File</span>
+<span class="n">dataset_train</span> <span class="o">=</span> <span class="n">HDF5File</span><span class="p">(</span><span class="s1">&#39;TRAIN.h5&#39;</span><span class="p">)</span>
+<span class="n">train_iterator</span> <span class="o">=</span> <span class="n">dataset_train</span><span class="o">.</span><span class="n">iterator</span><span class="p">(</span><span class="n">n_samples_group</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">rand</span><span class="o">=</span><span class="mi">23</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">sample</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">train_iterator</span><span class="p">):</span>
+    <span class="c1"># do something with sample.events, sample.label or sample.name</span>
+</pre></div>
+</div>
+<p>Example: making a GIF</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">aertb.core</span> <span class="kn">import</span> <span class="n">HDF5File</span><span class="p">,</span> <span class="n">make_gif</span>
+<span class="n">file</span> <span class="o">=</span> <span class="n">HDF5File</span><span class="p">(</span><span class="s1">&#39;../DVS_Barrel.hdf5&#39;</span><span class="p">)</span>
+<span class="n">sample</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">load_events</span><span class="p">(</span><span class="n">group</span><span class="o">=</span><span class="s1">&#39;moving&#39;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;11&#39;</span><span class="p">)</span>
+<span class="n">make_gif</span><span class="p">(</span><span class="n">sample</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="s1">&#39;sample_moving.gif&#39;</span><span class="p">,</span> <span class="n">camera_size</span><span class="o">=</span><span class="p">(</span><span class="mi">128</span><span class="p">,</span> <span class="mi">128</span><span class="p">),</span> <span class="n">n_frames</span><span class="o">=</span><span class="mi">480</span><span class="p">,</span> <span class="n">gtype</span><span class="o">=</span><span class="s1">&#39;std&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The library also includes a command line interface for converting files from a given extension to hdf5, as well as gif
+making capabilities for easy visualisation of the files.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="aertb.core.html" class="btn btn-neutral float-right" title="aertb.core" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="Welcome to aertb’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, Rafael Mosca
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

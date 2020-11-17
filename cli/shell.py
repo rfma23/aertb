@@ -17,9 +17,11 @@ import logging
 import click
 import os
 
-from aertb.core import FileLoader
+#rom aertb.core import FileLoader
 from aertb.core import make_gif
-
+from aertb.core import PolarityEventFile
+from aertb.core import create_hdf5_dataset
+from aertb.core.loaders import get_loader
 # =============================================================================
 #                     SHELL
 # =============================================================================
@@ -76,8 +78,7 @@ def tohdf5(file, ext, out, polarities):
             return
 
     click.echo('Processing ...')
-    fl = FileLoader(ext)
-    fl.create_hdf5_dataset(out, file, polarities)
+    create_hdf5_dataset(out, file, ext, polarities)
     click.secho('HDF5 file created successfully', bg='green')
 
 
@@ -96,8 +97,8 @@ def tohdf5(file, ext, out, polarities):
               help="Defines the type of gif visualization considered")
 @click.option("-nfr", "--nframes", type=int, default=8,
               help="Defines the number of frames produced for the gif")
-def makegif(file, out, ext,  polarities, gtype, nframes):
-
+def makegif(file, out, ext,  polarities, gtype, nframes, **kwargs):
+    # TODO HDF5 support with group and samples in kwarg
     logging.info(f'Calling makegif with params {[file, ext, out, polarities, gtype]}')
 
     if ext is None:
@@ -111,16 +112,14 @@ def makegif(file, out, ext,  polarities, gtype, nframes):
             return
 
     click.echo('Processing ...')
-    fl = FileLoader(ext)
-    events = fl.load_events(file, [0, 1], to_secs=True)
-
-    x_max = np.max(events['x']) + 1
-    y_max = np.max(events['y']) + 1
+    
+    loader = get_loader(ext)
+    events = loader.load_events(file, [0, 1], to_secs=True)
 
     polarity_map = {'pos': {1}, 'neg': {0}, 'both': {0,1}}
 
     viz_events = np.array([ev for ev in events if ev['p'] in polarity_map[polarities]])
-    make_gif(viz_events, out, camera_size=(y_max, x_max), gtype=gtype, n_frames=nframes)
+    make_gif(viz_events, filename=out, n_frames=nframes, f_type=gtype, axis=False, **kwargs)
 
     click.secho('GIF file created successfully', bg='green')
 

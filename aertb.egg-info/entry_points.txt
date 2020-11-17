@@ -1,0 +1,3 @@
+[console_scripts]
+aertb = cli.shell:aertb_shell
+

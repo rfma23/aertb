@@ -1,0 +1,526 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>aertb.core.loaders &mdash; aertb 0.4.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="aertb.core.processing" href="aertb.core.processing.html" />
+    <link rel="prev" title="aertb.core" href="aertb.core.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> aertb
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Overview:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="overview.html">The Library</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="aertb.core.html">aertb.core</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">aertb.core.loaders</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aertb.core.processing.html">aertb.core.processing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aertb.core.const.html">aertb.core.const</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aertb.core.hdf5tools.html">aertb.core.hdf5tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aertb.core.types.html">aertb.core.types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aertb.core.viz.html">aertb.core.viz</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">CLI/Shell:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="shell.html">Shell</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">aertb</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="aertb.core.html">aertb.core</a> &raquo;</li>
+        
+      <li>aertb.core.loaders</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/aertb.core.loaders.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="aertb-core-loaders">
+<h1>aertb.core.loaders<a class="headerlink" href="#aertb-core-loaders" title="Permalink to this headline">¶</a></h1>
+<p>Suggested use is:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">aertb.core.loaders</span> <span class="kn">import</span> <span class="n">PolarityEventFile</span>
+<span class="n">file</span> <span class="o">=</span> <span class="n">PolarityEventFile</span><span class="p">(</span><span class="s1">&#39;../myFile.myext&#39;</span><span class="p">)</span>
+<span class="c1"># handle every supported file extension</span>
+<span class="c1"># then file.header, file.get_events() ...</span>
+</pre></div>
+</div>
+<span class="target" id="module-aertb.core.loaders"></span><dl class="py class">
+<dt id="aertb.core.loaders.AedatLoader">
+<em class="property">class </em><code class="sig-prename descclassname">aertb.core.loaders.</code><code class="sig-name descname">AedatLoader</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#aertb.core.loaders.AedatLoader" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Finds the appropriate version to load the file …</p>
+<dl class="py method">
+<dt id="aertb.core.loaders.AedatLoader.get_header">
+<code class="sig-name descname">get_header</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">filename</span></em><span class="sig-paren">)</span><a class="headerlink" href="#aertb.core.loaders.AedatLoader.get_header" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="aertb.core.loaders.AedatLoader.get_version">
+<em class="property">classmethod </em><code class="sig-name descname">get_version</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">filename</span></em><span class="sig-paren">)</span><a class="headerlink" href="#aertb.core.loaders.AedatLoader.get_version" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the version of the AEDAT file in format (DIGIT.DIGIT)</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="aertb.core.loaders.AedatLoader.instance">
+<code class="sig-name descname">instance</code><em class="property"> = None</em><a class="headerlink" href="#aertb.core.loaders.AedatLoader.instance" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="aertb.core.loaders.AedatLoader.load_events">
+<code class="sig-name descname">load_events</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">filename</span></em>, <em class="sig-param"><span class="n">polarities</span></em>, <em class="sig-param"><span class="n">to_secs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#aertb.core.loaders.AedatLoader.load_events" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="aertb.core.loaders.AedatLoader.load_events_v2">
+<code class="sig-name descname">load_events_v2</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">filename</span></em>, <em class="sig-param"><span class="n">polarities</span></em>, <em class="sig-param"><span class="n">to_secs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#aertb.core.loaders.AedatLoader.load_events_v2" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Returns events from an aedat file. Each dat file is a binary file
+in which events are encoded using 4 bytes (unsigned int32) for the
+timestamps and 4 bytes (unsigned int32) for the data. The data is
+composed of 7 bits for the x position, 7 bits for the y position
+and 1 bit for the polarity.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>filename</strong> (<em>str</em><em>,</em>) – the name of the file to load</p></li>
+<li><p><strong>polarities</strong> (<em>list</em><em>,</em>) – the polarity encoding, can be [0,1] or [-1,1], by default [-1, 1]</p></li>
+<li><p><strong>to_secs</strong> (<em>bool</em><em>,</em>) – determines whether to keep in microseconds (False) or convert to
+seconds (True), by default True</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>a numpy structured array with (x, y, ts, p) fields</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>np.array</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="aertb.core.loaders.AedatLoader.parse_header">
+<code class="sig-name descname">parse_header</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">f</span></em><span class="sig-paren">)</span><a class="headerlink" href="#aertb.core.loaders.AedatLoader.parse_header" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="aertb.core.loaders.BinLoader">
+<em class="property">class </em><code class="sig-prename descclassname">aertb.core.loaders.</code><code class="sig-name descname">BinLoader</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#aertb.core.loaders.BinLoader" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">aertb.core.loaders.interface.LoaderInterface</span></code></p>
+<dl class="py method">
+<dt id="aertb.core.loaders.BinLoader.get_header">
+<code class="sig-name descname">get_header</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">filename</span></em><span class="sig-paren">)</span><a class="headerlink" href="#aertb.core.loaders.BinLoader.get_header" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="aertb.core.loaders.BinLoader.instance">
+<code class="sig-name descname">instance</code><em class="property"> = None</em><a class="headerlink" href="#aertb.core.loaders.BinLoader.instance" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="aertb.core.loaders.BinLoader.load_events">
+<code class="sig-name descname">load_events</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">filename</span></em>, <em class="sig-param"><span class="n">polarities</span></em>, <em class="sig-param"><span class="n">to_secs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#aertb.core.loaders.BinLoader.load_events" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reads a binary file containing events. To use with
+the N-MNIST or N-CALTECH101 dataset</p>
+<dl class="simple">
+<dt>Each event occupies 40 bits as described below:</dt><dd><p>bit 39 - 32: Xaddress (in pixels)
+bit 31 - 24: Yaddress (in pixels)
+bit 23: Polarity (0 for OFF, 1 for ON)
+bit 22 - 0: Timestamp (in microseconds)</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="aertb.core.loaders.DatLoader">
+<em class="property">class </em><code class="sig-prename descclassname">aertb.core.loaders.</code><code class="sig-name descname">DatLoader</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#aertb.core.loaders.DatLoader" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">aertb.core.loaders.interface.LoaderInterface</span></code></p>
+<dl class="py method">
+<dt id="aertb.core.loaders.DatLoader.dat_events">
+<code class="sig-name descname">dat_events</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">f</span></em>, <em class="sig-param"><span class="n">ev_type</span></em>, <em class="sig-param"><span class="n">polarities</span></em>, <em class="sig-param"><span class="n">to_secs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#aertb.core.loaders.DatLoader.dat_events" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load the events with the appropriate file extension</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>f</strong> – the file pointer</p></li>
+<li><p><strong>ev_type</strong> – the DAT event type</p></li>
+<li><p><strong>polarities</strong> – how the polarities hould be encoded</p></li>
+<li><p><strong>to_secs</strong> – if we should encode TS in secs</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="aertb.core.loaders.DatLoader.get_header">
+<code class="sig-name descname">get_header</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">filename</span></em><span class="sig-paren">)</span><a class="headerlink" href="#aertb.core.loaders.DatLoader.get_header" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="aertb.core.loaders.DatLoader.instance">
+<code class="sig-name descname">instance</code><em class="property"> = None</em><a class="headerlink" href="#aertb.core.loaders.DatLoader.instance" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="aertb.core.loaders.DatLoader.load_cd_events">
+<code class="sig-name descname">load_cd_events</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">f</span></em>, <em class="sig-param"><span class="n">polarities</span></em>, <em class="sig-param"><span class="n">to_secs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#aertb.core.loaders.DatLoader.load_cd_events" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="aertb.core.loaders.DatLoader.load_events">
+<code class="sig-name descname">load_events</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">filename</span></em>, <em class="sig-param"><span class="n">polarities</span><span class="o">=</span><span class="default_value">[- 1, 1]</span></em>, <em class="sig-param"><span class="n">to_secs</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#aertb.core.loaders.DatLoader.load_events" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns events from a dat file. Each dat file is a binary file in which events
+are encoded using 4 bytes (unsigned int32) for the timestamps and 4 bytes
+(unsigned int32) for the data, encoding is little-endian ordering. The data is
+composed of 14 bits for the x position, 14 bits for the y position and 1 bit for
+the polarity (encoded as -1/1).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>filename</strong> – the filename/path to the .dat file</p></li>
+<li><p><strong>polarities</strong> – the polarity encoding, can be [0,1] or [-1,1] (default)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>returns: a recarray with (x, y, ts, p)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="aertb.core.loaders.DatLoader.load_stereo_cd_events">
+<code class="sig-name descname">load_stereo_cd_events</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">f</span></em>, <em class="sig-param"><span class="n">polarities</span></em>, <em class="sig-param"><span class="n">to_secs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#aertb.core.loaders.DatLoader.load_stereo_cd_events" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="aertb.core.loaders.DatLoader.parse_header">
+<code class="sig-name descname">parse_header</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">f</span></em><span class="sig-paren">)</span><a class="headerlink" href="#aertb.core.loaders.DatLoader.parse_header" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="aertb.core.loaders.LoaderInterface">
+<em class="property">class </em><code class="sig-prename descclassname">aertb.core.loaders.</code><code class="sig-name descname">LoaderInterface</code><a class="headerlink" href="#aertb.core.loaders.LoaderInterface" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">abc.ABC</span></code></p>
+<dl class="py method">
+<dt id="aertb.core.loaders.LoaderInterface.get_header">
+<em class="property">abstract </em><code class="sig-name descname">get_header</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">filename</span></em><span class="sig-paren">)</span><a class="headerlink" href="#aertb.core.loaders.LoaderInterface.get_header" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="aertb.core.loaders.LoaderInterface.load_events">
+<em class="property">abstract </em><code class="sig-name descname">load_events</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">filename</span></em>, <em class="sig-param"><span class="n">polarities</span></em>, <em class="sig-param"><span class="n">to_secs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#aertb.core.loaders.LoaderInterface.load_events" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="aertb.core.loaders.MatLoader">
+<em class="property">class </em><code class="sig-prename descclassname">aertb.core.loaders.</code><code class="sig-name descname">MatLoader</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#aertb.core.loaders.MatLoader" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">aertb.core.loaders.interface.LoaderInterface</span></code></p>
+<dl class="py method">
+<dt id="aertb.core.loaders.MatLoader.get_header">
+<code class="sig-name descname">get_header</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">filename</span></em><span class="sig-paren">)</span><a class="headerlink" href="#aertb.core.loaders.MatLoader.get_header" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="aertb.core.loaders.MatLoader.instance">
+<code class="sig-name descname">instance</code><em class="property"> = None</em><a class="headerlink" href="#aertb.core.loaders.MatLoader.instance" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="aertb.core.loaders.MatLoader.load_events">
+<code class="sig-name descname">load_events</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">filename</span></em>, <em class="sig-param"><span class="n">polarities</span><span class="o">=</span><span class="default_value">[- 1, 1]</span></em>, <em class="sig-param"><span class="n">to_secs</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#aertb.core.loaders.MatLoader.load_events" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns events from a mat file. Each mat file is a MATLAB file containing an
+object with the TD events.</p>
+<p>Works on DVS-BARREL ‘Original.mat’</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>filename</strong> – the filename/path to the .mat file</p></li>
+<li><p><strong>polarities</strong> – the polarity encoding, can be [0,1] or [-1,1] (default)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>returns: a recarray with (x, y, ts, p)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="aertb.core.loaders.MatLoader.load_sample_events">
+<code class="sig-name descname">load_sample_events</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">filename</span></em>, <em class="sig-param"><span class="n">object_name</span><span class="o">=</span><span class="default_value">'ROI'</span></em>, <em class="sig-param"><span class="n">sample</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">polarities</span><span class="o">=</span><span class="default_value">[- 1, 1]</span></em>, <em class="sig-param"><span class="n">to_secs</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#aertb.core.loaders.MatLoader.load_sample_events" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns events from a mat file. Each mat file is a MATLAB file containing an
+object with the TD events.</p>
+<p>Works on DVS-BARREL ‘Stabilized.mat / Moving.mat’</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>filename</strong> – the filename/path to the .mat file</p></li>
+<li><p><strong>object_name</strong> – the name of the MATLAB object saved in the file</p></li>
+<li><p><strong>sample</strong> – an integer specifying the sample to load</p></li>
+<li><p><strong>polarities</strong> – the polarity encoding, can be [0,1] or [-1,1] (default)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>returns: a recarray with (x, y, ts, p)</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="aertb.core.loaders.PolarityEventFile">
+<em class="property">class </em><code class="sig-prename descclassname">aertb.core.loaders.</code><code class="sig-name descname">PolarityEventFile</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">filename</span></em><span class="sig-paren">)</span><a class="headerlink" href="#aertb.core.loaders.PolarityEventFile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A top level class redirecting instructions to the correct loader class
+for the given file</p>
+<dl class="py method">
+<dt id="aertb.core.loaders.PolarityEventFile.get_header">
+<code class="sig-name descname">get_header</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#aertb.core.loaders.PolarityEventFile.get_header" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the header specified in the file</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="aertb.core.loaders.PolarityEventFile.header">
+<em class="property">property </em><code class="sig-name descname">header</code><a class="headerlink" href="#aertb.core.loaders.PolarityEventFile.header" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="aertb.core.loaders.PolarityEventFile.load_events">
+<code class="sig-name descname">load_events</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">polarities</span><span class="o">=</span><span class="default_value">[- 1, 1]</span></em>, <em class="sig-param"><span class="n">to_secs</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="headerlink" href="#aertb.core.loaders.PolarityEventFile.load_events" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Returns a structured event array from a supported event file</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>polarities</strong> (<em>list</em><em>, </em><em>optional</em>) – the polarity encoding, can be [0,1] or [-1,1], by default [-1, 1]</p></li>
+<li><p><strong>to_secs</strong> (<em>bool</em><em>, </em><em>optional</em>) – determines whether to keep in microseconds (False) or convert to
+seconds (True), by default True</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>a numpy structured array with (x, y, ts, p) fields</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>np.array</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt id="aertb.core.loaders.get_loader">
+<code class="sig-prename descclassname">aertb.core.loaders.</code><code class="sig-name descname">get_loader</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">extension</span></em><span class="sig-paren">)</span><a class="headerlink" href="#aertb.core.loaders.get_loader" title="Permalink to this definition">¶</a></dt>
+<dd><p>Acts as a factory method for File loaders</p>
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="aertb.core.processing.html" class="btn btn-neutral float-right" title="aertb.core.processing" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="aertb.core.html" class="btn btn-neutral float-left" title="aertb.core" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, Rafael Mosca
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

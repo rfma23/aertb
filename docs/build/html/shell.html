@@ -1,0 +1,305 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Shell &mdash; aertb 0.4.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="aertb.core.viz" href="aertb.core.viz.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> aertb
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Overview:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="overview.html">The Library</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="aertb.core.html">aertb.core</a></li>
+</ul>
+<p class="caption"><span class="caption-text">CLI/Shell:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Shell</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#opening-the-shell">Opening the Shell</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#using-the-shell">Using the Shell</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#examples">Examples</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">aertb</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Shell</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/shell.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="shell">
+<h1>Shell<a class="headerlink" href="#shell" title="Permalink to this headline">¶</a></h1>
+<p>The library also includes a command line interface and shell for converting files from a given
+extension to hdf5, as well as gif making capabilities for easy visualisation of the files.</p>
+<div class="section" id="opening-the-shell">
+<h2>Opening the Shell<a class="headerlink" href="#opening-the-shell" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><p>If the install with pip worked perfectly, you can now type <cite>aertb</cite> in a terminal window and the
+Shell will open.</p></li>
+<li><p>If you are installing it from Github: download you should download the project from github and follow the following</p></li>
+</ul>
+<dl>
+<dt>instructions:</dt><dd><ul>
+<li><ol class="loweralpha simple">
+<li><p><code class="code docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">...</span></code></p></li>
+</ol>
+</li>
+<li><ol class="loweralpha simple" start="2">
+<li><p>Create a virual environment, if venv is not installed run <code class="code docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">virtualenv</span></code>,</p></li>
+</ol>
+<blockquote>
+<div><p>then <code class="code docutils literal notranslate"><span class="pre">python3</span> <span class="pre">-m</span> <span class="pre">venv</span> <span class="pre">aertb_env</span></code></p>
+</div></blockquote>
+</li>
+<li><ol class="loweralpha simple" start="3">
+<li><p>Run <code class="code docutils literal notranslate"><span class="pre">source</span> <span class="pre">aertb_env/bin/activate</span></code></p></li>
+</ol>
+</li>
+<li><ol class="loweralpha simple" start="4">
+<li><p>Run the following command: <code class="code docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-r</span> <span class="pre">requirements.txt</span></code></p></li>
+</ol>
+</li>
+<li><ol class="loweralpha simple" start="5">
+<li><p>Open the shell with <code class="code docutils literal notranslate"><span class="pre">python3</span> <span class="pre">.</span></code> or with the <code class="code docutils literal notranslate"><span class="pre">__main__.py</span></code> file</p></li>
+</ol>
+</li>
+</ul>
+</dd>
+</dl>
+</div></blockquote>
+</div>
+<div class="section" id="using-the-shell">
+<h2>Using the Shell<a class="headerlink" href="#using-the-shell" title="Permalink to this headline">¶</a></h2>
+<p>Once the Shell is open you get a a similar output on your terminal:</p>
+<img alt="_static/aertb_cli_shell.gif" src="_static/aertb_cli_shell.gif" />
+<p>type <cite>help</cite> to see supported commands and <cite>help &lt;topic&gt;</cite> to get more info of the command</p>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<p><strong>Creating an HDF5 out of a directory</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">tohdf5</span> <span class="o">-</span><span class="n">f</span> <span class="s1">&#39;example_data/&#39;</span> <span class="o">-</span><span class="n">e</span> <span class="s1">&#39;dat&#39;</span> <span class="o">-</span><span class="n">o</span> <span class="s1">&#39;mytest.h5&#39;</span>
+</pre></div>
+</div>
+<p>The recommended directory shape is</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">|--</span><span class="n">Parent</span>
+    <span class="o">|--</span> <span class="n">LabelClass1</span>
+        <span class="o">|--</span> <span class="n">SampleName1</span>
+        <span class="o">|--</span> <span class="n">SampleName2</span>
+        <span class="o">|--</span> <span class="o">....</span>
+    <span class="o">|--</span> <span class="n">LabelClass2</span>
+        <span class="o">|--</span> <span class="n">SampleName1</span>
+        <span class="o">|--</span> <span class="n">SampleName2</span>
+        <span class="o">|--</span> <span class="o">....</span>
+    <span class="o">|--</span> <span class="o">...</span>
+</pre></div>
+</div>
+<p>And we suggest that train and test are kept as separate folders so they translate
+to two different files</p>
+<p><strong>Creating an HDF5 out of a single file</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">tohdf5</span> <span class="o">-</span><span class="n">f</span> <span class="s1">&#39;example_data/bin/one/03263.bin&#39;</span> <span class="o">-</span><span class="n">o</span> <span class="s1">&#39;mytest2.h5&#39;</span>
+</pre></div>
+</div>
+<p><strong>Creating a gif out of a given file</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">makegif</span> <span class="o">-</span><span class="n">f</span> <span class="s1">&#39;example_data/prophesee_dat/test_23l_td.dat&#39;</span> <span class="o">-</span><span class="n">o</span> <span class="s1">&#39;myGif.gif&#39;</span> <span class="o">-</span><span class="n">nfr</span> <span class="mi">240</span> <span class="o">-</span><span class="n">g</span> <span class="s1">&#39;std&#39;</span>
+</pre></div>
+</div>
+<img alt="_static/myGif.gif" src="_static/myGif.gif" />
+<p><strong>Exiting the Shell</strong></p>
+<ol class="arabic simple">
+<li><p>type <code class="code docutils literal notranslate"><span class="pre">quit</span></code></p></li>
+<li><p>Exit virtual environment: <code class="code docutils literal notranslate"><span class="pre">$</span> <span class="pre">deactivate</span></code></p></li>
+</ol>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="aertb.core.viz.html" class="btn btn-neutral float-left" title="aertb.core.viz" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, Rafael Mosca
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -75,10 +75,6 @@ class FileLoader:
             :param polarities: indicates the polarity encoding for the
                                data, it can be [0,1] or [-1,1]
 
-            Returns
-            -------
-            nothing
-
         """
 
         with h5py.File(dataset_name, 'w') as fp:

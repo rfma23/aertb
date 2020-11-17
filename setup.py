@@ -21,7 +21,7 @@ with open('requirements.txt') as f:
 
 setup(
     name='aertb',
-    version="0.3.4",
+    version="0.4.0",
     author="Rafael Mosca",
     author_email="rafael.mosca@mail.polimi.it",
     url='https://github.com/rfma23',
@@ -31,7 +31,7 @@ setup(
             'aertb = cli.shell:aertb_shell',
         ],
     },
-    packages=["cli", "aertb", "aertb.core", "aertb.core.loaders"],
+    packages=["cli", "aertb", "aertb.core", "aertb.core.loaders", "aertb.core.processing"],
     install_requires = requirements,
     keywords = ['aedat', 'aer', 'dat', 'event', 'camera'],
     classifiers=list(filter(None, metadata.split('\n'))),
