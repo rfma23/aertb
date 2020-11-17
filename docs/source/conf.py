@@ -13,7 +13,7 @@
 from recommonmark.parser import CommonMarkParser
 import os
 import sys
-sys.path.insert(0, os.path.abspath('../aertb/'))
+sys.path.insert(0, os.path.abspath('../../'))
 sys.setrecursionlimit(1500)
 
 
