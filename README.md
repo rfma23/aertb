@@ -8,10 +8,10 @@ See the project on [PyPI](https://pypi.org/project/aertb/) or do `pip3 install a
 
 ### Usage
 ```py
-from aertb.core import FileLoader
-
-datLoader = FileLoader('dat') # 'bin', or 'aedat'
-datLoader.load_events('../example_data/dat/cars/obj_004414_td.dat')
+from aertb.core.loaders import PolarityEventFile
+file = PolarityEventFile('../myFile.myext')
+# handle every supported file extension
+# then file.header, file.get_events() ...
 ```
 
 Supported extensions:
