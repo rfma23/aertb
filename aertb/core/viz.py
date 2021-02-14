@@ -97,7 +97,7 @@ def make_gif(events, filename='my_gif.gif', n_frames=8, f_type='decay', axis=Fal
     min_ts = events[0]['ts']
     delta = duration / n_frames
     
-    camera_size = (max(events['x'])+1, max(events['y'])+1)
+    camera_size = (max(events['y'])+1, max(events['x'])+1)
     
     if f_type == 'decay':
         tau = kwargs.get('tau', delta)
